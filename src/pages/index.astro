@@ -40,43 +40,81 @@ import '../styles/global.css';
         <p class="caption"><strong>Descriptive national/country-level series — not evidence that climate caused this pattern.</strong> Annual taro yield is reported in kg/ha. The sharp 1990s decline is a reason to ask better resilience questions, not permission to attribute outcomes to annual rainfall, SST or any single event. This chart does not forecast yield.</p>
         <p class="source-note">Why this crop: food security, household livelihoods and trade all matter. SPC reports taro was grown by more than 18,347 households in 2015; those figures are historical context, not a current estimate.</p>
       </section>
+
+      <section id="seasonal-section" class="wrap story-section paired" aria-labelledby="seasonal-title">
+        <div class="section-intro"><p class="section-label">04 · SEASONAL RHYTHM</p><h2 id="seasonal-title">The seasonal pattern is real. The exact month is uncertain.</h2><p>Monthly precipitation is a separate MERRA-2/POWER grid-point series near central Upolu, 1981–2025. It is not merged with the SPC Samoa-wide annual anomaly series.</p></div>
+        <div class="leaf-stage"><img src="/taro-leaf-object.svg" alt="" aria-hidden="true" /><div id="leaf-chart" class="chart chart-overlay" aria-label="Monthly rainfall distribution by calendar month"></div></div>
+        <p class="caption"><strong>Seasonal-variability view, not a local forecast.</strong> Each box contains 45 values for its calendar month. The box spans the middle 50%; whiskers follow the standard 1.5×IQR convention; the dot marks the median. Source: NASA/POWER <code>PRECTOTCORR</code>, MERRA-2, sampled at −13.83°, −171.75°.</p>
+        <div id="decomposition-chart" class="chart" aria-label="Seasonal monthly normal rainfall chart"></div>
+        <p class="caption">Monthly normal = the 1981–2025 mean for that calendar month. It is a descriptive seasonal decomposition component, not a prediction for a future year.</p>
+      </section>
+
+      <section id="heatmap-section" class="wrap story-section" aria-labelledby="heatmap-title">
+        <div class="section-intro"><p class="section-label">05 · WHEN THE PATTERN BREAKS</p><h2 id="heatmap-title">A wet season can be unusual in either direction.</h2><p>Every cell shows that month’s departure from its own 1981–2025 calendar-month normal. This makes January comparable with January — not with August.</p></div>
+        <div id="rainfall-heatmap" class="chart heatmap" aria-label="Year by month rainfall anomaly heat map"></div>
+        <p class="caption"><strong>Grid-point anomaly heat map.</strong> Blue is wetter than that month’s normal; rust is drier. It shows historical variation near central Upolu, not village or catchment conditions.</p>
+      </section>
+
+      <section id="enso-section" class="wrap story-section paired" aria-labelledby="enso-title">
+        <div class="section-intro"><p class="section-label">06 · PACIFIC CLIMATE CONTEXT</p><h2 id="enso-title">ENSO is a context layer, not a cause label.</h2><p>NOAA Niño 3.4 sea-surface-temperature anomalies are shown only to provide broader Pacific climate context for the monthly rainfall record.</p></div>
+        <div id="enso-chart" class="chart" aria-label="NOAA Niño 3.4 monthly anomaly chart"></div>
+        <p class="caption">Niño 3.4 anomalies are calculated against a 1981–2010 calendar-month baseline from NOAA PSL’s monthly SST series. They do not establish a Samoa rainfall, household-water or taro-yield impact.</p>
+      </section>
+
+      <section id="forecast-section" class="wrap story-section" aria-labelledby="forecast-title">
+        <div class="section-intro"><p class="section-label">07 · TEST THE MODEL BEFORE YOU SHOW IT</p><h2 id="forecast-title">A more complicated model must earn its place.</h2><p>We held out January 2016–December 2025, then compared a seasonal-naïve baseline with additive Holt–Winters exponential smoothing. This is retrospective model evaluation, not a 2026 forecast.</p></div>
+        <div id="forecast-chart" class="chart" aria-label="Forecast back-test comparison"></div>
+        <p id="forecast-caption" class="caption"></p>
+      </section>
+
+      <section id="geo-section" class="wrap story-section paired" aria-labelledby="geo-title">
+        <div class="section-intro"><p class="section-label">08 · GEOGRAPHIC SCOPE</p><h2 id="geo-title">A map should clarify scope, not imply precision we do not have.</h2><p>We have three different spatial bases: a Samoa-wide annual rainfall series, a Samoa EEZ annual SST series and one disclosed MERRA-2/POWER grid point near central Upolu.</p></div>
+        <div id="scope-map" class="chart" aria-label="Schematic geographic locator for the MERRA-2 grid point near Upolu"></div>
+        <p class="caption"><strong>Schematic coordinate locator, not a risk map.</strong> It places only the disclosed gridded rainfall sample. We should not use a choropleth or village-level map until quality-controlled local observations and spatial boundaries are authorised.</p>
+      </section>
+
       <section class="wrap cards" aria-labelledby="gate-title">
-        <p class="section-label">04 · BEFORE ANY FORECAST</p><h2 id="gate-title">Evidence gates for the next build</h2>
+        <p class="section-label">BEFORE ANY OPERATIONAL FORECAST</p><h2 id="gate-title">Evidence gates for the next build</h2>
         <article><h3>Seasonal preparedness</h3><p>Add a below/near/above-normal outlook only when an authoritative product and its hindcast skill are documented.</p></article>
-        <article><h3>Taro resilience</h3><p>Next, add taro production, harvested-area and pest/disease metadata only after their provenance and interpretation are checked. Correlation must not become a causal claim.</p></article>
+        <article><h3>Taro resilience</h3><p>Add taro production, harvested-area and pest/disease metadata only after their provenance and interpretation are checked. Correlation must not become a causal claim.</p></article>
         <article><h3>Local decisions</h3><p>Add station, catchment or community detail only with authorised data, quality metadata and, where relevant, local review.</p></article>
       </section>
       <section class="wrap methods">
         <h2>What this draft does not do</h2>
         <ul><li>Forecast water-system failure, disaster impacts or crop yields.</li><li>Rank villages or communities.</li><li>Convert missing data into zeroes.</li><li>Use a single number to define “resilience”.</li></ul>
-        <p>Sources and limitations: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions">SPC rainfall SDMX</a> · <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions">SPC SST SDMX</a> · <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions">SPC taro-yield SDMX</a> · <a href="https://pafpnet.spc.int/policy-bank/countries/samoa">SPC Samoa Agriculture Policy Bank</a> · <a href="https://www.fao.org/4/y8345e/y8345e03.htm">FAO Samoa taro-leaf-blight history</a> · <a href="https://pacificdatavizchallenge.org/">Challenge data catalogue</a>.</p>
+        <p>Sources and limitations: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions">SPC rainfall SDMX</a> · <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions">SPC SST SDMX</a> · <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions">SPC taro-yield SDMX</a> · <a href="https://power.larc.nasa.gov/">NASA POWER</a> · <a href="https://psl.noaa.gov/data/correlation/nina34.data">NOAA PSL Niño 3.4</a> · <a href="https://pafpnet.spc.int/policy-bank/countries/samoa">SPC Samoa Agriculture Policy Bank</a> · <a href="https://www.fao.org/4/y8345e/y8345e03.htm">FAO Samoa taro-leaf-blight history</a> · <a href="https://pacificdatavizchallenge.org/">Challenge data catalogue</a>.</p>
       </section>
     </main>
     <script>
       import * as Plot from '@observablehq/plot';
-      type Row = [number, number, number];
-      type YieldRow = [number, number];
+      type Row = [number, number, number]; type YieldRow = [number, number];
+      type Monthly = { year:number; month:number; total_mm:number; anomaly_mm:number; nino34_anomaly_c:number | null };
+      type Distribution = {month:number; mean_mm:number; p10_mm:number; q1_mm:number; median_mm:number; q3_mm:number; p90_mm:number; n:number};
       type Data = { rainfall: Row[]; sst: Row[]; taro_yield: YieldRow[] };
-      const data = await fetch('/data/samoa-climate.json').then((r) => r.json()) as Data;
+      type Seasonal = {rainfall:Monthly[]; distribution:Distribution[]; backtest:{test_period:string; seasonal_naive:{mae:number;rmse:number;n:number}; additive_holt_winters:{mae:number;rmse:number;n:number;parameters:{alpha:number;beta:number;gamma:number}};winner:string}};
+      const [data, seasonal] = await Promise.all([
+        fetch('/data/samoa-climate.json').then((r) => r.json()) as Promise<Data>,
+        fetch('/data/seasonal-analysis.json').then((r) => r.json()) as Promise<Seasonal>,
+      ]);
       const rainfall = data.rainfall.map(([year, anomaly, se]) => ({year, anomaly, se}));
       const sst = data.sst.map(([year, anomaly, se]) => ({year, anomaly, se}));
       const taroYield = data.taro_yield.map(([year, yieldKgHa]) => ({year, yieldKgHa}));
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
       const mount = (id: string, chart: SVGSVGElement | HTMLElement) => document.querySelector(`#${id}`)?.append(chart);
-      mount('rainfall-chart', Plot.plot({
-        width: 960, height: 350, marginLeft: 58, marginBottom: 42, grid: true,
-        x: {label: 'Year', tickFormat: (year: number) => year % 5 === 0 ? String(year) : ''}, y: {label: 'Precipitation anomaly (mm)'},
-        marks: [Plot.ruleY([0], {stroke: '#1d323a'}), Plot.ruleX(rainfall, {x:'year', y1:d=>d.anomaly-d.se, y2:d=>d.anomaly+d.se, stroke:'#697b81'}), Plot.barY(rainfall, {x:'year', y:'anomaly', fill:d=>d.anomaly < 0 ? '#ba6d3c' : '#236a86', title:d => `${d.year}: ${d.anomaly} mm (SE ${d.se} mm)`})]
-      }));
-      mount('sst-chart', Plot.plot({
-        width: 960, height: 350, marginLeft: 58, marginBottom: 42, grid: true,
-        x: {label: 'Year', ticks: 10}, y: {label: 'SST anomaly (°C)'},
-        marks: [Plot.ruleY([0], {stroke: '#1d323a'}), Plot.lineY(sst, {x:'year', y:'anomaly', stroke:'#c24129', strokeWidth:2.5, title:d => `${d.year}: ${d.anomaly} °C (SE ${d.se} °C)`}), Plot.dot(sst, {x:'year', y:'anomaly', fill:'#c24129', r:2.5})]
-      }));
-      mount('taro-chart', Plot.plot({
-        width: 960, height: 350, marginLeft: 68, marginBottom: 42, grid: true,
-        x: {label: 'Year', ticks: 10}, y: {label: 'Taro yield (kg/ha)'},
-        marks: [Plot.ruleX([1993], {stroke:'#ba6d3c', strokeDasharray:'4,3'}), Plot.lineY(taroYield, {x:'year', y:'yieldKgHa', stroke:'#397a57', strokeWidth:2.5, title:d => `${d.year}: ${d.yieldKgHa.toLocaleString()} kg/ha`}), Plot.dot(taroYield, {x:'year', y:'yieldKgHa', fill:'#397a57', r:2.4})]
-      }));
+      const width = () => Math.max(320, Math.min(936, document.querySelector('.wrap')?.clientWidth ?? 936));
+      mount('rainfall-chart', Plot.plot({width:width(), height:350, marginLeft:58, marginBottom:42, grid:true, x:{label:'Year', tickFormat:(year:number)=>year % 5 === 0 ? String(year) : ''}, y:{label:'Precipitation anomaly (mm)'}, marks:[Plot.ruleY([0],{stroke:'#1d323a'}),Plot.ruleX(rainfall,{x:'year',y1:d=>d.anomaly-d.se,y2:d=>d.anomaly+d.se,stroke:'#697b81'}),Plot.barY(rainfall,{x:'year',y:'anomaly',fill:d=>d.anomaly < 0 ? '#ba6d3c' : '#236a86',title:d=>`${d.year}: ${d.anomaly} mm (SE ${d.se} mm)`})]}));
+      mount('sst-chart', Plot.plot({width:width(), height:350, marginLeft:58, marginBottom:42, grid:true, x:{label:'Year',ticks:10}, y:{label:'SST anomaly (°C)'}, marks:[Plot.ruleY([0],{stroke:'#1d323a'}),Plot.lineY(sst,{x:'year',y:'anomaly',stroke:'#c24129',strokeWidth:2.5,title:d=>`${d.year}: ${d.anomaly} °C (SE ${d.se} °C)`}),Plot.dot(sst,{x:'year',y:'anomaly',fill:'#c24129',r:2.5})]}));
+      mount('taro-chart', Plot.plot({width:width(), height:350, marginLeft:68, marginBottom:42, grid:true, x:{label:'Year',ticks:10}, y:{label:'Taro yield (kg/ha)'}, marks:[Plot.ruleX([1993],{stroke:'#ba6d3c',strokeDasharray:'4,3'}),Plot.lineY(taroYield,{x:'year',y:'yieldKgHa',stroke:'#397a57',strokeWidth:2.5,title:d=>`${d.year}: ${d.yieldKgHa.toLocaleString()} kg/ha`}),Plot.dot(taroYield,{x:'year',y:'yieldKgHa',fill:'#397a57',r:2.4})]}));
+      mount('leaf-chart', Plot.plot({width:width(),height:370,marginLeft:54,marginBottom:45,grid:true,x:{label:'Calendar month',domain:[...Array(12).keys()].map(x=>x+1),tickFormat:(m:number)=>months[m-1]},y:{label:'Monthly precipitation (mm)'},marks:[Plot.boxY(seasonal.rainfall,{x:'month',y:'total_mm',fill:'#9fc9a9',stroke:'#397a57',title:d=>`${d.year} ${months[d.month-1]}: ${d.total_mm.toFixed(0)} mm`}),Plot.dot(seasonal.distribution,{x:'month',y:'median_mm',fill:'#163b3b',r:3})]}));
+      mount('decomposition-chart', Plot.plot({width:width(),height:280,marginLeft:54,marginBottom:45,grid:true,x:{label:'Calendar month',domain:[...Array(12).keys()].map(x=>x+1),tickFormat:(m:number)=>months[m-1]},y:{label:'1981–2025 monthly mean (mm)'},marks:[Plot.areaY(seasonal.distribution,{x:'month',y:'mean_mm',fill:'#d5e8e8'}),Plot.lineY(seasonal.distribution,{x:'month',y:'mean_mm',stroke:'#236a86',strokeWidth:3}),Plot.dot(seasonal.distribution,{x:'month',y:'mean_mm',fill:'#236a86',r:4})]}));
+      mount('rainfall-heatmap', Plot.plot({width:width(),height:760,marginLeft:48,marginBottom:44,x:{label:'Month',domain:[...Array(12).keys()].map(x=>x+1),tickFormat:(m:number)=>months[m-1]},y:{label:'Year',ticks:10},color:{type:'diverging',scheme:'BrBG',pivot:0,label:'Departure from monthly normal (mm)'},marks:[Plot.cell(seasonal.rainfall,{x:'month',y:'year',fill:'anomaly_mm',title:d=>`${d.year} ${months[d.month-1]}: ${d.anomaly_mm >= 0 ? '+' : ''}${d.anomaly_mm.toFixed(0)} mm from normal`}),Plot.frame()]}));
+      const enso = seasonal.rainfall.filter((d)=>d.nino34_anomaly_c !== null).map(d=>({...d,date:new Date(Date.UTC(d.year,d.month-1,1))}));
+      mount('enso-chart', Plot.plot({width:width(),height:300,marginLeft:54,marginBottom:42,grid:true,x:{label:'Year',ticks:10},y:{label:'Niño 3.4 anomaly (°C; 1981–2010 monthly baseline)'},color:{legend:true},marks:[Plot.ruleY([-.5,.5],{stroke:'#697b81',strokeDasharray:'3,3'}),Plot.ruleY([0],{stroke:'#1d323a'}),Plot.lineY(enso,{x:'date',y:'nino34_anomaly_c',stroke:'#7d4c2d',strokeWidth:1.7}),Plot.dot(enso.filter(d=>Math.abs(d.nino34_anomaly_c ?? 0)>=.5),{x:'date',y:'nino34_anomaly_c',fill:d=>(d.nino34_anomaly_c ?? 0)>0?'#ba6d3c':'#236a86',r:2.5})]}));
+      const comparison = [{method:'Seasonal naïve',...seasonal.backtest.seasonal_naive},{method:'Additive Holt–Winters',...seasonal.backtest.additive_holt_winters}];
+      mount('forecast-chart', Plot.plot({width:width(),height:260,marginLeft:150,marginBottom:42,grid:true,x:{label:'Held-out error (mm)'},y:{label:null},marks:[Plot.barX(comparison,{x:'mae',y:'method',fill:'#9fc9a9',title:d=>`${d.method}: MAE ${d.mae.toFixed(1)} mm`}),Plot.dot(comparison,{x:'rmse',y:'method',fill:'#ba6d3c',r:6,title:d=>`${d.method}: RMSE ${d.rmse.toFixed(1)} mm`}),Plot.text(comparison,{x:'mae',y:'method',text:d=>`MAE ${d.mae.toFixed(1)} | RMSE ${d.rmse.toFixed(1)}`,dx:7,textAnchor:'start',fill:'#17333b'})]}));
+      document.querySelector('#forecast-caption')!.innerHTML = `<strong>Back-test result:</strong> additive Holt–Winters reduced held-out RMSE from ${seasonal.backtest.seasonal_naive.rmse.toFixed(1)} mm to ${seasonal.backtest.additive_holt_winters.rmse.toFixed(1)} mm across ${seasonal.backtest.seasonal_naive.n} months (${seasonal.backtest.test_period}). That earns further evaluation; it does not validate a current operational forecast.`;
+      const locator=[{lon:-171.75,lat:-13.83,label:'MERRA-2/POWER grid point\n−13.83°, −171.75°'}];
+      mount('scope-map', Plot.plot({width:width(),height:300,marginLeft:55,marginBottom:42,x:{label:'Longitude (°)',domain:[-172.5,-170.5],grid:true},y:{label:'Latitude (°)',domain:[-14.7,-13.1],grid:true},marks:[Plot.rect([{x1:-172.1,x2:-171.35,y1:-14.15,y2:-13.75}],{x1:'x1',x2:'x2',y1:'y1',y2:'y2',fill:'#d5e8e8',stroke:'#236a86',fillOpacity:.55}),Plot.dot(locator,{x:'lon',y:'lat',fill:'#ba6d3c',stroke:'white',strokeWidth:2,r:7}),Plot.text(locator,{x:'lon',y:'lat',text:'label',lineAnchor:'bottom',dy:-12,fontWeight:700,fill:'#17333b'}),Plot.text([{lon:-171.72,lat:-14.05,label:'Approximate Upolu extent — schematic only'}],{x:'lon',y:'lat',text:'label',fill:'#236a86'})]}));
     </script>
   </body>
 </html>

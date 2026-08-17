@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "playwright test",
+    "data:seasonal": "node scripts/build_seasonal_analysis.mjs",
     "render:pdf": "node scripts/render-pdf.mjs"
   },
   "dependencies": {
