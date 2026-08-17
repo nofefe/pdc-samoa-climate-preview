@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract taro leaf study</title>
+  <desc id="desc">An original botanical taro-leaf object in layered greens with an abstract vein structure.</desc>
+  <defs>
+    <linearGradient id="leaf" x1="0" y1="0" x2="0.92" y2="1">
+      <stop offset="0" stop-color="#b5d97a"/>
+      <stop offset="0.42" stop-color="#4d9a63"/>
+      <stop offset="1" stop-color="#163f38"/>
+    </linearGradient>
+    <linearGradient id="stem" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d0b077"/><stop offset="1" stop-color="#76613f"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="16" dy="22" stdDeviation="19" flood-color="#0c2927" flood-opacity=".30"/>
+    </filter>
+    <clipPath id="leafClip"><path d="M450 774C379 639 157 572 128 326 112 190 246 98 389 169c23 11 42 27 61 47 19-20 38-36 61-47 143-71 277 21 261 157-29 246-251 313-322 448Z"/></clipPath>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M450 774C379 639 157 572 128 326 112 190 246 98 389 169c23 11 42 27 61 47 19-20 38-36 61-47 143-71 277 21 261 157-29 246-251 313-322 448Z" fill="url(#leaf)"/>
+    <g clip-path="url(#leafClip)" fill="none" stroke="#dce7b3" stroke-linecap="round" opacity=".5">
+      <path d="M450 758C451 566 450 391 450 209" stroke-width="13"/>
+      <path d="M450 380C364 343 272 302 164 289M450 450C344 440 255 407 137 370M450 527C354 548 270 540 179 508" stroke-width="8"/>
+      <path d="M450 380C536 343 628 302 736 289M450 450C556 440 645 407 763 370M450 527C546 548 630 540 721 508" stroke-width="8"/>
+      <path d="M450 300C367 265 322 233 274 191M450 300C533 265 578 233 626 191M450 608C372 649 330 684 291 733M450 608C528 649 570 684 609 733" stroke-width="6"/>
+    </g>
+    <path d="M449 742c-12 57-33 94-76 122" fill="none" stroke="url(#stem)" stroke-width="25" stroke-linecap="round"/>
+    <circle cx="450" cy="377" r="13" fill="#e7eeaf" opacity=".85"/>
+  </g>
+</svg>
