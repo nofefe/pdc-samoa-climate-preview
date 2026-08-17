@@ -28,6 +28,12 @@ See `evidence-manifest.md` for SDMX URLs, baselines and limitations.
 - Any causal, risk-ranking or operational forecast claim.
 - Public hosting or publication.
 
+## Additional source audit integrated
+- Corrected the rainfall wording: inspected metadata identifies a Samoa-wide series but does **not** state its station/grid/national-area aggregation method.
+- Added data catalogue/reuse notes: PDH labels the datasets `Other (Open)`, but a specific licence text/URL was not displayed; attribution is required and additional reuse terms remain unverified.
+- Recorded exact held-source endpoints for 22 crop items, estimated/projected population growth, the dated Samoa Meteorology seasonal outlook, Samoa NDC 3.0 and the World Bank country profile.
+- Added explicit in-chart labels: **exploratory annual-data view — not a forecast or causal estimate**.
+
 ## WordPress verification
 Authenticated preflight succeeded. Page 219 was read before and after the write; status remained `draft`, title remained `Pacific Dataviz Challenge 2026 — Draft`, and content read-back matched the submitted draft content.
 
