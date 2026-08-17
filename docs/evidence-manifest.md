@@ -15,7 +15,8 @@ This is a draft framework, not a final competition entry or operational climate 
 
 | Dataset / source | Exact public access URL | Verified use and limitation |
 |---|---|---|
-| Disaggregated crop yields | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS..CROP_YIELD?dimensionAtObservation=AllDimensions | Samoa national, 22 crop items, 1961–2024, kg/ha. Add a crop only after its definition, provenance and local relevance are reviewed. No causal inference from aligned climate series. |
+| **Taro yield** (`TARO`, `CROP_YIELD`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions | **Rendered in Draft 0.2.** Samoa annual country-level context, 1961–2024, kg/ha; 64 contiguous observations. Raw response retained at `data/raw/spc-samoa-taro-yield.csv`, acquired by `scripts/fetch_taro.py`. It is descriptive only: do not infer climate caused yield outcomes or forecast yield. |
+| Other disaggregated crop yields | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS..CROP_YIELD?dimensionAtObservation=AllDimensions | Samoa national, 22 crop items, 1961–2024, kg/ha. Held pending item definition, provenance and local-relevance review. |
 | Headline crop yield | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.CROP_YIELD.WS?dimensionAtObservation=AllDimensions | Samoa annual aggregate, 1961–2024, kg/ha. Do not treat as an individual crop or assume undocumented aggregation/weighting. |
 | Total population growth (`NMDI0002`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_NMDI_POP,1.0/A.WS.NMDI0002._T._T._T._T._Z?dimensionAtObservation=AllDimensions | Samoa annual 1990–2025, percent. All returned observations are `E`, sourced as PDH.Stat population projections; do not label it observed census change. |
 | Samoa Meteorology Division El Niño Update No. 2 (11 Aug 2026) | https://www.mnre.gov.ws/wp-content/uploads/2026/08/FINAL-El-Nino-Update-No.2-11082026-final.pdf | Possible dated Aug 2026–Jan 2027 Samoa-wide seasonal-outlook panel. It reports probabilities, not local forecasts or observed impact. Attribute MNRE/Samoa Meteorology Division; no reuse licence was identified. |
@@ -31,7 +32,9 @@ Metadata endpoints:
 - Population dataflow: https://stats-sdmx-disseminate.pacificdata.org/rest/dataflow/SPC/DF_NMDI_POP/1.0?references=all&detail=referencepartial
 
 ## Method guardrails
-- The initial shared annual comparison window is 1979–2025 for rainfall and SST. Add crop and population only after explicit harmonisation and status checks; the four-series overlap would be 1990–2024.
+- Taro is the selected opening crop because SPC describes it as Samoa’s most commonly grown root crop and preferred starchy staple. SPC’s figures on households, plantings and exports are 2014–15 historical context, not a current estimate: https://pafpnet.spc.int/policy-bank/countries/samoa. An FAO Samoa study documents that taro leaf blight devastated taro in 1993; this history is used as context, not as a statistical attribution from the series: https://www.fao.org/4/y8345e/y8345e03.htm
+- The taro yield series is a country-level annual agricultural measure. The framework does not align it with rainfall or SST in one chart, calculate correlation, infer a cause, or generate a forecast.
+- The initial shared annual comparison window is 1979–2025 for rainfall and SST; the rainfall–SST–taro overlap is 1979–2024. A shared time window does not establish a relationship.
 - No causal attribution between displayed series.
 - No trend claim for rainfall in this framework.
 - Positive or negative anomaly means relative to each series' own baseline; values are not combined.

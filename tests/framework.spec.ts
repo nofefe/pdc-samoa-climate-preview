@@ -5,4 +5,7 @@ test('draft framework renders its evidence guardrails', async ({ page }) => {
   await expect(page.getByText('What this draft does not do')).toBeVisible();
   await expect(page.locator('#rainfall-chart svg')).toBeVisible();
   await expect(page.locator('#sst-chart svg')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Start with taro' })).toBeVisible();
+  await expect(page.locator('#taro-chart svg')).toBeVisible();
+  await expect(page.getByText('not evidence that climate caused this pattern')).toBeVisible();
 });

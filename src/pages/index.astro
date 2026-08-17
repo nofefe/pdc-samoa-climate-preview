@@ -31,35 +31,48 @@ import '../styles/global.css';
         <div id="sst-chart" class="chart" aria-label="Annual Samoa sea surface temperature anomaly chart"></div>
         <p class="caption"><strong>Exploratory annual-data view — not a forecast or causal estimate.</strong> This is an EEZ aggregate, not a coastal or inshore temperature record. It is displayed alongside rainfall for context, not as proof of a causal relationship.</p>
       </section>
+      <section class="wrap story-section" aria-labelledby="taro-title">
+        <div class="section-intro"><p class="section-label">03 · FOOD RESILIENCE</p><h2 id="taro-title">Start with taro.</h2><p>Taro is the most commonly grown root crop and the preferred starchy staple in Samoa, according to SPC’s Samoa Agriculture Policy Bank. It is also a strong resilience case: an FAO Samoa study records the destructive taro-leaf-blight outbreak of 1993; SPC later reports disease-resistant varieties increased plantings.</p></div>
+        <div id="taro-chart" class="chart" aria-label="Annual Samoa taro yield chart"></div>
+        <p class="caption"><strong>Descriptive national/country-level series — not evidence that climate caused this pattern.</strong> Annual taro yield is reported in kg/ha. The sharp 1990s decline is a reason to ask better resilience questions, not permission to attribute outcomes to annual rainfall, SST or any single event. This chart does not forecast yield.</p>
+        <p class="source-note">Why this crop: food security, household livelihoods and trade all matter. SPC reports taro was grown by more than 18,347 households in 2015; those figures are historical context, not a current estimate.</p>
+      </section>
       <section class="wrap cards" aria-labelledby="gate-title">
-        <p class="section-label">03 · BEFORE ANY FORECAST</p><h2 id="gate-title">Evidence gates for the next build</h2>
+        <p class="section-label">04 · BEFORE ANY FORECAST</p><h2 id="gate-title">Evidence gates for the next build</h2>
         <article><h3>Seasonal preparedness</h3><p>Add a below/near/above-normal outlook only when an authoritative product and its hindcast skill are documented.</p></article>
-        <article><h3>Food resilience</h3><p>Add a selected crop only after provenance and interpretation have been checked. Correlation must not become a causal claim.</p></article>
+        <article><h3>Taro resilience</h3><p>Next, add taro production, harvested-area and pest/disease metadata only after their provenance and interpretation are checked. Correlation must not become a causal claim.</p></article>
         <article><h3>Local decisions</h3><p>Add station, catchment or community detail only with authorised data, quality metadata and, where relevant, local review.</p></article>
       </section>
       <section class="wrap methods">
         <h2>What this draft does not do</h2>
         <ul><li>Forecast water-system failure, disaster impacts or crop yields.</li><li>Rank villages or communities.</li><li>Convert missing data into zeroes.</li><li>Use a single number to define “resilience”.</li></ul>
-        <p>Sources and limitations: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions">SPC rainfall SDMX</a> · <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions">SPC SST SDMX</a> · <a href="https://pacificdatavizchallenge.org/">Challenge data catalogue</a>.</p>
+        <p>Sources and limitations: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions">SPC rainfall SDMX</a> · <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions">SPC SST SDMX</a> · <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions">SPC taro-yield SDMX</a> · <a href="https://pafpnet.spc.int/policy-bank/countries/samoa">SPC Samoa Agriculture Policy Bank</a> · <a href="https://www.fao.org/4/y8345e/y8345e03.htm">FAO Samoa taro-leaf-blight history</a> · <a href="https://pacificdatavizchallenge.org/">Challenge data catalogue</a>.</p>
       </section>
     </main>
     <script>
       import * as Plot from '@observablehq/plot';
       type Row = [number, number, number];
-      type Data = { rainfall: Row[]; sst: Row[] };
+      type YieldRow = [number, number];
+      type Data = { rainfall: Row[]; sst: Row[]; taro_yield: YieldRow[] };
       const data = await fetch('/data/samoa-climate.json').then((r) => r.json()) as Data;
       const rainfall = data.rainfall.map(([year, anomaly, se]) => ({year, anomaly, se}));
       const sst = data.sst.map(([year, anomaly, se]) => ({year, anomaly, se}));
+      const taroYield = data.taro_yield.map(([year, yieldKgHa]) => ({year, yieldKgHa}));
       const mount = (id: string, chart: SVGSVGElement | HTMLElement) => document.querySelector(`#${id}`)?.append(chart);
       mount('rainfall-chart', Plot.plot({
         width: 960, height: 350, marginLeft: 58, marginBottom: 42, grid: true,
-        x: {label: 'Year', ticks: 10}, y: {label: 'Precipitation anomaly (mm)'},
+        x: {label: 'Year', tickFormat: (year: number) => year % 5 === 0 ? String(year) : ''}, y: {label: 'Precipitation anomaly (mm)'},
         marks: [Plot.ruleY([0], {stroke: '#1d323a'}), Plot.ruleX(rainfall, {x:'year', y1:d=>d.anomaly-d.se, y2:d=>d.anomaly+d.se, stroke:'#697b81'}), Plot.barY(rainfall, {x:'year', y:'anomaly', fill:d=>d.anomaly < 0 ? '#ba6d3c' : '#236a86', title:d => `${d.year}: ${d.anomaly} mm (SE ${d.se} mm)`})]
       }));
       mount('sst-chart', Plot.plot({
         width: 960, height: 350, marginLeft: 58, marginBottom: 42, grid: true,
         x: {label: 'Year', ticks: 10}, y: {label: 'SST anomaly (°C)'},
         marks: [Plot.ruleY([0], {stroke: '#1d323a'}), Plot.lineY(sst, {x:'year', y:'anomaly', stroke:'#c24129', strokeWidth:2.5, title:d => `${d.year}: ${d.anomaly} °C (SE ${d.se} °C)`}), Plot.dot(sst, {x:'year', y:'anomaly', fill:'#c24129', r:2.5})]
+      }));
+      mount('taro-chart', Plot.plot({
+        width: 960, height: 350, marginLeft: 68, marginBottom: 42, grid: true,
+        x: {label: 'Year', ticks: 10}, y: {label: 'Taro yield (kg/ha)'},
+        marks: [Plot.ruleX([1993], {stroke:'#ba6d3c', strokeDasharray:'4,3'}), Plot.lineY(taroYield, {x:'year', y:'yieldKgHa', stroke:'#397a57', strokeWidth:2.5, title:d => `${d.year}: ${d.yieldKgHa.toLocaleString()} kg/ha`}), Plot.dot(taroYield, {x:'year', y:'yieldKgHa', fill:'#397a57', r:2.4})]
       }));
     </script>
   </body>
