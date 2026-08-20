@@ -1,7 +1,7 @@
-# Evidence manifest — framework stage
+# Evidence manifest — four-act review build
 
 ## Scope
-This is a draft framework, not a final competition entry or operational climate service. Values shown are observed annual aggregates from the official Challenge data catalogue. The app deliberately does not forecast water-system failure, disaster impacts or crop yields.
+This is a review build, not a submitted competition entry or operational climate service. The main narrative uses four visual moments to argue that an average year is a poor planning basis. It deliberately does not forecast water-system failure, disaster impacts or crop yields. Verified story values and documentary claims are recorded in `docs/story-source-audit.md`.
 
 ## Initial rendered data
 
@@ -24,6 +24,9 @@ This is a draft framework, not a final competition entry or operational climate 
 | Total population growth (`NMDI0002`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_NMDI_POP,1.0/A.WS.NMDI0002._T._T._T._T._Z?dimensionAtObservation=AllDimensions | Samoa annual 1990–2025, percent. All returned observations are `E`, sourced as PDH.Stat population projections; do not label it observed census change. |
 | Samoa Meteorology Division El Niño Update No. 2 (11 Aug 2026) | https://www.mnre.gov.ws/wp-content/uploads/2026/08/FINAL-El-Nino-Update-No.2-11082026-final.pdf | Possible dated Aug 2026–Jan 2027 Samoa-wide seasonal-outlook panel. It reports probabilities, not local forecasts or observed impact. Attribute MNRE/Samoa Meteorology Division; no reuse licence was identified. |
 | Samoa NDC 3.0 (Oct 2025) | https://unfccc.int/sites/default/files/2026-01/Samoa%20NDC3.0_FINAL.pdf | National policy/decsion context to 2035. It is a commitment, not a local climate data source or proof of outcomes. |
+| Samoa NDC 3.0 — Government-hosted copy | https://www.mnre.gov.ws/wp-content/uploads/2026/01/Samoa-FINAL-NDC3.0_READYTOPRINT_10.12.2025.pdf | Verified source for the 368-village CIM-plan description, the 2035 crop-variety target and farmer-consent requirement. |
+| FAO — *The taro improvement programme in Samoa* | https://www.fao.org/4/i2554e/i2554e00.pdf | Verified source for the 1993 TLB history, genetic-resource exchange, on-farm evaluation and participatory improvement programme. The disease history is not used as climate attribution. |
+| Pacific Dataviz Challenge 2026 rules | https://pacificdatavizchallenge.org/sites/default/files/2026-05/Pacific-Dataviz-Challenge-2026-rules-reglement.pdf | Verified 20 Aug 2026 for official/open-data requirements, citation/licence duties, originality wording, supportive-AI boundary, deadline and URL-retention requirement. Recheck before submission. |
 | World Bank Climate Risk Country Profile: Samoa (2021) | https://climateknowledgeportal.worldbank.org/sites/default/files/country-profiles/15821-WB_Samoa%20Country%20Profile-WEB.pdf | Scenario/model-ensemble context only; CMIP5/RCP vintage and limited small-scale reliability must be shown. |
 
 ## Catalogue and reuse notes
