@@ -34,8 +34,8 @@ The rules also say entries must be created specifically for the Challenge and �
 
 Source: https://pacificdatavizchallenge.org/sites/default/files/2026-05/Pacific-Dataviz-Challenge-2026-rules-reglement.pdf
 
-## Held from publication
+## Publication decisions
 
-- The proposed Māori/Samoan family positionality statement is not inserted into the site until Mr Tom explicitly approves publishing that personal information.
+- Mr Tom explicitly approved publishing the proposed Māori/Samoan family positionality statement in the Cloudflare review build on 20 August 2026.
 - No family recollection of the 1993 taro crisis will be used without the speaker’s permission and attribution review.
-- No Samoan or te reo Māori wording will be added without fluent-speaker review.
+- No additional Samoan or te reo Māori wording will be added without fluent-speaker review.

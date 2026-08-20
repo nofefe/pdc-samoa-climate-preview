@@ -5,6 +5,7 @@ test('four-act story renders one thesis and the primary evidence', async ({ page
   await expect(page).toHaveTitle('The Year We Plan For Does Not Exist');
   await expect(page.getByRole('heading', { name: 'The Year We Plan For Does Not Exist' })).toBeVisible();
   await expect(page.getByText('Use history to choose the tests, and local knowledge to choose the response.')).toBeVisible();
+  await expect(page.getByText('I grew up in Aotearoa with a Māori mum and a Samoan dad.')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What these data can and cannot tell us' })).toBeVisible();
   await expect(page.locator('#rainfall-chart svg')).toBeVisible();
   await expect(page.locator('#sst-chart svg')).toBeVisible();
