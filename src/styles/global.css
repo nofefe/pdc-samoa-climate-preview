@@ -16,6 +16,7 @@ h1,h2,h3,h4,blockquote { font-family:Fraunces,Georgia,serif; line-height:1.06; t
 .signature { margin:.7rem 0 0; color:var(--coral); font:700 .84rem 'DM Mono',monospace; letter-spacing:.04em; text-transform:uppercase; }
 .positionality { max-width:720px; margin:1.35rem 0 0; padding-left:16px; border-left:4px solid var(--coral); color:#38545b; font-size:1rem; }
 .personal-bridge { max-width:700px; margin:1rem 0 0; color:var(--muted); font-size:1.03rem; }
+.opening-reflection { max-width:700px; margin:1.5rem 0 0; color:var(--ink); font:600 clamp(1.2rem,2.5vw,1.55rem) Fraunces,Georgia,serif; }
 .dek { max-width:700px; margin-top:1.7rem; color:var(--muted); font-size:1.08rem; text-wrap:pretty; }
 .opening-signals { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:30px; }
 .opening-signals article { padding:15px; background:rgb(255 253 248 / .86); border-top:3px solid var(--coral); }
