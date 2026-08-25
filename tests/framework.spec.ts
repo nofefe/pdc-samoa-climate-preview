@@ -7,7 +7,7 @@ test('water story renders its personal framing, evidence boundary and primary ch
   await expect(page.getByText('That is why I kept coming back to two years in the rainfall record.')).toBeVisible();
   await expect(page.getByText('Those figures cannot tell us what happened in every village, or explain why the change occurred.')).toBeVisible();
   await expect(page.getByText("My father is from Vaiafai, Iva, in Savai'i")).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'What this water story can and cannot show' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'What these records can and cannot tell us' })).toBeVisible();
   await expect(page.locator('#rainfall-chart svg')).toBeVisible();
   await expect(page.locator('#sst-chart svg')).toBeVisible();
   await expect(page.locator('#seasonal-normal-chart svg')).toBeVisible();
