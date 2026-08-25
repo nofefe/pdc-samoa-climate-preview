@@ -4,8 +4,8 @@ test('water story renders its personal framing, evidence boundary and primary ch
   await page.goto('/');
   await expect(page).toHaveTitle('When Water Changes, Everything Changes');
   await expect(page.getByRole('heading', { name: 'When Water Changes, Everything Changes' })).toBeVisible();
-  await expect(page.getByText('That is why I kept coming back to two years in the rainfall record.')).toBeVisible();
-  await expect(page.getByText('Those figures cannot tell us what happened in every village, or explain why the change occurred.')).toBeVisible();
+  await expect(page.getByText('That connection is where this story begins.')).toBeVisible();
+  await expect(page.getByText('That is not a story about one village.')).toBeVisible();
   await expect(page.getByText("My father is from Vaiafai, Iva, in Savai'i")).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What these records can and cannot tell us' })).toBeVisible();
   await expect(page.locator('#rainfall-chart svg')).toBeVisible();
