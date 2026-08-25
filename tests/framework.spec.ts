@@ -23,7 +23,7 @@ test('meaningful presets update the stress test and keep evidence in separate la
   await expect(page.locator('#episode-title')).toHaveText('April 2016: unusually wet month');
   await expect(page.getByLabel('Year to explore')).toHaveValue('2016');
   await expect(page.getByLabel('Month to inspect')).toHaveValue('4');
-  await expect(page.getByText('All monthly values are shown only as departures from the same calendar month’s 1981–2025 record mean.')).toBeVisible();
+  await expect(page.getByText('All monthly values are shown only as departures from the same calendar month’s 1981 to 2025 record mean.')).toBeVisible();
 
   await page.getByRole('button', { name: /February 1998/ }).click();
   await expect(page.getByLabel('Year to explore')).toHaveValue('1998');
