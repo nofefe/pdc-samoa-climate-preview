@@ -24,7 +24,7 @@ RETRIEVED = "2026-08-17"
 
 
 def fetch_csv() -> list[dict[str, str]]:
-    request = Request(URL, headers={"Accept": "text/csv", "User-Agent": "Pacific-Dataviz-Challenge-framework/0.2"})
+    request = Request(URL, headers={"Accept": "text/csv", "User-Agent": "Pacific-Dataviz-Challenge-story/1.0"})
     with urlopen(request, timeout=30) as response:
         text = response.read().decode("utf-8")
     RAW_PATH.parent.mkdir(parents=True, exist_ok=True)

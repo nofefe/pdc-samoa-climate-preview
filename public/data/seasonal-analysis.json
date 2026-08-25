@@ -2,7 +2,7 @@
   "provenance": {
     "rainfall": "NASA/POWER PRECTOTCORR, source response identified as MERRA-2; grid coordinate -13.83, -171.75; retrieved 2026-08-18.",
     "enso": "NOAA Physical Sciences Laboratory Niño 3.4 monthly SST source: https://psl.noaa.gov/data/correlation/nina34.data; values converted to 1981–2010 calendar-month anomalies locally.",
-    "warning": "Rainfall is a gridded point product near central Upolu, not a local gauge, catchment or Samoa-national estimate. Niño 3.4 is Pacific climate context, not proof of Samoa or taro impacts. Forecast scores are a retrospective method comparison, not an operational forecast."
+    "warning": "Rainfall is a gridded point product near central Upolu, not a local gauge, catchment or Samoa-national estimate. Niño 3.4 is Pacific climate context, not proof of Samoa or taro impacts."
   },
   "rainfall": [
     {
@@ -3907,24 +3907,5 @@
       "p90_mm": 331.514,
       "n": 45
     }
-  ],
-  "backtest": {
-    "test_period": "2016-01 to 2025-12; annual rolling origins; 120 held-out monthly observations.",
-    "seasonal_naive": {
-      "mae": 73.53683333333335,
-      "rmse": 99.30368170415434,
-      "n": 120
-    },
-    "additive_holt_winters": {
-      "mae": 65.46054783493528,
-      "rmse": 84.54587170362036,
-      "n": 120,
-      "parameters": {
-        "alpha": 0.1,
-        "beta": 0.1,
-        "gamma": 0.1
-      }
-    },
-    "winner": "additive_holt_winters"
-  }
+  ]
 }

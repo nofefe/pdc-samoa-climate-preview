@@ -6,7 +6,9 @@ This repository contains the interactive entry **When Water Changes, Everything 
 
 ```sh
 npm install
+python3 scripts/build_spc_climate.py  # rebuilds from committed raw SPC captures
 python3 scripts/check_data.py
+node scripts/build_seasonal_analysis.mjs
 npm run build
 npm run test
 ```
@@ -21,8 +23,8 @@ through 31 August 2029.
 
 | Rendered material | Publisher and dataset | Geography, period and unit | Accessed | Transformation | Frozen material in this repository |
 | --- | --- | --- | --- | --- | --- |
-| Annual rainfall anomaly | Pacific Community (SPC), Pacific Data Hub .Stat, `DF_CLIMATE_CHANGE` / `RAIN_ANOM` | Samoa-wide annual anomaly, 1979–2025, mm; 1991–2020 baseline | 2026-08-17 | Retained as published; chart highlights 2020–2022 only | `public/data/samoa-climate.json` |
-| Annual sea-surface-temperature anomaly | Pacific Community (SPC), Pacific Data Hub .Stat, `DF_CLIMATE_CHANGE` / `SST_ANOM` | Samoa EEZ aggregate, annual, 1979–2025, °C; 1971–2000 baseline | 2026-08-17 | Retained as published | `public/data/samoa-climate.json` |
+| Annual rainfall anomaly | Pacific Community (SPC), Pacific Data Hub .Stat, `DF_CLIMATE_CHANGE` / `RAIN_ANOM` | Samoa-wide annual anomaly, 1979–2025, mm; 1991–2020 baseline | 2026-08-25 | Parsed from committed raw SDMX capture | `data/raw/spc-samoa-rainfall-anomaly.xml`, `data/raw/spc-climate-captures.json`, `scripts/build_spc_climate.py`, `public/data/samoa-climate.json` |
+| Annual sea-surface-temperature anomaly | Pacific Community (SPC), Pacific Data Hub .Stat, `DF_CLIMATE_CHANGE` / `SST_ANOM` | Samoa EEZ aggregate, annual, 1979–2025, °C; 1971–2000 baseline | 2026-08-25 | Parsed from committed raw SDMX capture | `data/raw/spc-samoa-eez-sst-anomaly.xml`, `data/raw/spc-climate-captures.json`, `scripts/build_spc_climate.py`, `public/data/samoa-climate.json` |
 | Taro yield | Pacific Community (SPC), Pacific Data Hub .Stat, `DF_AGRICULTURAL_PRODUCTION` / `TARO.CROP_YIELD` | Samoa country-level annual yield, 1961–2024, kg/ha | 2026-08-17 | Retained as published | `data/raw/spc-samoa-taro-yield.csv`, `public/data/samoa-climate.json` |
 | Monthly precipitation illustration | NASA POWER API `PRECTOTCORR`, source response identified as MERRA-2 | Grid cell at −13.83°, −171.75°; monthly, 1981–2025 | 2026-08-18 | Mean daily precipitation in mm multiplied by days in the calendar month; departures calculated against each month’s 1981–2025 record mean | `data/raw/nasa-power-upolu-monthly-precipitation-1981-2025.json`, `data/processed/nasa-power-upolu-monthly-precipitation-1981-2025.csv`, `public/data/seasonal-analysis.json` |
 | Niño 3.4 appendix context | NOAA Physical Sciences Laboratory | Monthly Niño 3.4 SST | 2026-08-18 | Converted locally to 1981–2010 calendar-month anomalies | `data/raw/noaa-psl-nino34-monthly.data`, `public/data/seasonal-analysis.json` |
@@ -42,7 +44,7 @@ The retained NASA POWER response records API version `v2.9.7`.
 
 ## Licence and reuse status
 
-Pacific Data Hub states that each dataset carries its own applicable licence and that users must follow that dataset-specific licence and attribution requirement. The exact dataset-page licence terms for the SPC indicators above have **not yet been independently verified**. Do not treat this repository or entry as cleared for final submission until those terms are confirmed and recorded.
+Pacific Data Hub states that each dataset carries its own applicable licence and that users must follow that dataset-specific licence and attribution requirement. The public dataset/SDMX records inspected for the SPC indicators do not expose the applicable licence text or URL. See [`docs/licence-matrix.md`](docs/licence-matrix.md) for the captured evidence, required attribution, and the outstanding written-confirmation request. Do not treat this repository or entry as cleared for final submission until those terms are confirmed and recorded.
 
 Source: [Pacific Data Hub terms of use](https://pacificdata.org/terms-use).
 

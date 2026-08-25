@@ -27,6 +27,10 @@ import '../styles/global.css';
         <img class="taro-object" src="/taro-leaf-object.svg" alt="" aria-hidden="true" />
       </header>
 
+      <figure class="place-photo wrap reveal" aria-labelledby="place-photo-caption">
+        <img src="/images/family-place-savaii.webp" width="1439" height="959" alt="A family place in Savai'i, with a coconut palm, shoreline, homes and a person on stairs." />
+        <figcaption id="place-photo-caption"><strong>Fale aiga.</strong> Water is part of the everyday setting of this story. Photograph supplied by the author and published with permission.</figcaption>
+      </figure>
 
       <section id="act-one" class="wrap story-section act reveal" aria-labelledby="act-one-title">
         <div class="act-number">ACT 1 · WHEN WATER CHANGES</div>
@@ -76,7 +80,7 @@ import '../styles/global.css';
           </figure>
 
           <section class="stress-test" aria-labelledby="stress-title">
-            <div class="stress-heading"><div><p class="section-label">WATER STRESS TEST</p><h3 id="stress-title">Choose a historical water condition worth testing</h3></div><p>Each preset explains why the date matters. Use the year and month controls to explore another condition.</p></div>
+            <div class="stress-heading"><div><p class="section-label">WATER STRESS TEST</p><h3 id="stress-title">Choose a historical water condition worth testing</h3></div><div class="stress-actions"><p>Each preset explains why the date matters. Use the year and month controls to explore another condition.</p><button id="reset-explorer" type="button">Start with April 2016</button></div></div>
             <div class="episode-presets" aria-label="Historical episode presets">
               <button type="button" data-episode="taro-low" aria-pressed="false"><strong>1994</strong><span>Taro yield low</span></button>
               <button type="button" data-episode="wet-month" aria-pressed="true"><strong>April 2016</strong><span>Unusually wet month</span></button>
@@ -195,10 +199,9 @@ import '../styles/global.css';
           <summary><span><span class="section-label">APPENDIX</span><strong id="methods-heading">Methods, data and limitations</strong></span><span aria-hidden="true">+</span></summary>
           <div class="methods-content">
             <section><h3>Pacific climate context</h3><span class="scope-badge scope-badge-context">Pacific climate context</span><p>Niño 3.4 is retained here as context only. It is not a Samoa rainfall or taro-causation label.</p><div id="enso-chart" class="chart" role="img" aria-label="Monthly Niño 3.4 anomaly chart"></div></section>
-            <section><h3>Forecast-method back-test</h3><p>The held-out comparison is methodological evidence, not a current forecast.</p><div id="forecast-chart" class="chart" role="img" aria-label="Retrospective forecast method comparison"></div><p id="forecast-caption" class="chart-summary"></p></section>
             <section><h3>Monthly distribution mechanics</h3><p>Each box contains 45 observations for the same calendar month. Box = middle 50%; whiskers = 1.5×IQR; dot = median.</p><div id="leaf-chart" class="chart" role="img" aria-label="Monthly rainfall distributions"></div></section>
             <section><h3>Geographic scope</h3><p>The locator shows only the disclosed MERRA-2/POWER sample coordinate. It is not a risk map.</p><div id="scope-map" class="chart" role="img" aria-label="Schematic locator for the near-Upolu grid point"></div></section>
-            <section class="methods-notes"><h3>Data treatment and limitations</h3><ul><li>Missing values remain missing; they are never converted to zero.</li><li>Rainfall, SST, taro yield and Niño 3.4 retain separate units, baselines and spatial scopes.</li><li>No displayed alignment is treated as causal evidence.</li><li>The seasonal model comparison is retrospective and does not produce an operational outlook.</li><li>Raw source captures and deterministic transformations are retained in the project repository.</li></ul></section>
+            <section class="methods-notes"><h3>Data treatment and limitations</h3><ul><li>Missing values remain missing; they are never converted to zero.</li><li>Rainfall, SST, taro yield and Niño 3.4 retain separate units, baselines and spatial scopes.</li><li>No displayed alignment is treated as causal evidence.</li><li>Raw source captures and deterministic transformations are retained in the project repository.</li></ul></section>
             <section class="sources"><h3>Sources</h3><ul>
               <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub: Samoa rainfall anomaly</a></li>
               <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub: Samoa EEZ SST anomaly</a></li>
@@ -208,12 +211,18 @@ import '../styles/global.css';
               <li><a href="https://www.fao.org/4/i2554e/i2554e00.pdf">FAO: The taro improvement programme in Samoa</a></li>
               <li><a href="https://www.mnre.gov.ws/wp-content/uploads/2026/01/Samoa-FINAL-NDC3.0_READYTOPRINT_10.12.2025.pdf">Government of Samoa: NDC 3.0</a></li>
               <li><a href="https://pacificdatavizchallenge.org/sites/default/files/2026-05/Pacific-Dataviz-Challenge-2026-rules-reglement.pdf">Pacific Dataviz Challenge 2026 rules</a></li>
-            </ul><p>Accessed and frozen for this review build in August 2026. Dataset-specific reuse terms remain a final submission check.</p><p><a href="https://github.com/nofefe/pdc-samoa-climate-preview" target="_blank" rel="noreferrer">Reproducibility record, frozen inputs and transformation scripts</a></p></section>
+            </ul><p>SPC requires users to follow the applicable dataset licence and attribution requirement. The public catalogue exposes no dataset-specific licence text for these two indicators; see the <a href="https://github.com/nofefe/pdc-samoa-climate-preview/blob/main/docs/licence-matrix.md" target="_blank" rel="noreferrer">licence matrix</a>. The entry is not represented as cleared for final submission until SPC confirms the applicable reuse terms.</p><p><a href="https://github.com/nofefe/pdc-samoa-climate-preview" target="_blank" rel="noreferrer">Reproducibility record, frozen inputs and transformation scripts</a></p></section>
             <section class="process-note"><h3>Authorship and development process</h3><p>The entrant conceived the question, selected the datasets and transformations, interpreted the results, and made the cultural, narrative and visual-design decisions. AI-assisted work was limited to coding support, debugging, accessibility checks and wording alternatives. The entrant retains final editorial and submission responsibility.</p><p>This production URL is intended to remain publicly accessible through 31 August 2029.</p></section>
           </div>
         </details>
+        <a class="return-to-story" href="#act-one">Return to the story <span aria-hidden="true">↑</span></a>
       </section>
     </main>
+    <div id="story-progress" class="story-progress" role="progressbar" aria-label="Story reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+    <p id="act-cue" class="act-cue" aria-live="polite">Act 1 of 4</p>
+    <button id="scroll-top" class="scroll-top" type="button" hidden aria-label="Back to top" title="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
 
     <script>
       import * as Plot from '@observablehq/plot';
@@ -222,11 +231,29 @@ import '../styles/global.css';
       type Monthly = { year:number; month:number; total_mm:number; anomaly_mm:number; nino34_anomaly_c:number | null };
       type Distribution = {month:number; mean_mm:number; p10_mm:number; q1_mm:number; median_mm:number; q3_mm:number; p90_mm:number; n:number};
       type Data = { rainfall:Row[]; sst:Row[]; taro_yield:YieldRow[] };
-      type Seasonal = {rainfall:Monthly[]; distribution:Distribution[]; backtest:{test_period:string; seasonal_naive:{mae:number;rmse:number;n:number}; additive_holt_winters:{mae:number;rmse:number;n:number}; winner:string}};
+      type Seasonal = {rainfall:Monthly[]; distribution:Distribution[]};
       type Metric = 'anomaly_mm';
       type Episode = {title:string;year:number;month:number;metric:Metric;what:string;scope:string;question:string;limit:string};
 
       document.documentElement.classList.add('js');
+      const scrollTopButton=document.querySelector<HTMLButtonElement>('#scroll-top')!;
+      const progressBar=document.querySelector<HTMLElement>('#story-progress')!;
+      const progressFill=progressBar.querySelector<HTMLElement>('span')!;
+      const actCue=document.querySelector<HTMLElement>('#act-cue')!;
+      const storyActs=Array.from(document.querySelectorAll<HTMLElement>('.act'));
+      const syncReadingState=()=>{
+        scrollTopButton.hidden=window.scrollY<600;
+        const maximum=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+        const progress=Math.round(Math.min(100,(window.scrollY/maximum)*100));
+        progressBar.setAttribute('aria-valuenow',String(progress));
+        progressFill.style.width=`${progress}%`;
+      };
+      window.addEventListener('scroll',syncReadingState,{passive:true});
+      window.addEventListener('resize',syncReadingState,{passive:true});
+      syncReadingState();
+      scrollTopButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+      const actObserver=new IntersectionObserver((entries)=>{for(const entry of entries){if(!entry.isIntersecting)continue;const index=storyActs.indexOf(entry.target as HTMLElement);if(index>=0)actCue.textContent=`Act ${index+1} of ${storyActs.length}`;}},{threshold:.45});
+      storyActs.forEach((act)=>actObserver.observe(act));
       const revealObserver = matchMedia('(prefers-reduced-motion: reduce)').matches ? null : new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -299,6 +326,7 @@ import '../styles/global.css';
         }
         document.querySelectorAll<HTMLButtonElement>('[data-episode]').forEach((button)=>button.setAttribute('aria-pressed',String(button.dataset.episode===selectedEpisode)));
       };
+      let explorerHasRendered=false;
       const renderExplorer = () => {
         const year=Number(yearControl.value), month=Number(monthControl.value);
         const annualRainfall=annualValue(rainfall,year), annualSst=annualValue(sst,year), annualTaro=annualValue(taroYield,year);
@@ -309,15 +337,20 @@ import '../styles/global.css';
         setText('#selected-sst',annualSst?`${signed(annualSst.anomaly,2)} °C`:'Not reported');
         setText('#selected-taro',annualTaro?`${annualTaro.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:1})} kg/ha`:'Not reported');
         setText('#selected-monthly',selectedMonthly?`${signed(selectedMonthly.anomaly_mm,0)} mm`:'Not reported');
-        const host=document.querySelector<HTMLElement>('#explorer-chart')!;host.dataset.metric=selectedMetric;
+        const host=document.querySelector<HTMLElement>('#explorer-chart')!;
+        const shouldEmphasise=explorerHasRendered&&!matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(shouldEmphasise){host.classList.remove('is-updating');void host.offsetWidth;host.classList.add('is-updating');}
+        host.dataset.metric=selectedMetric;
         const label='Departure from calendar-month record mean (mm)';
         host.replaceChildren(Plot.plot({width:chartWidth('explorer-chart'),height:isMobile?240:320,marginLeft:60,marginBottom:44,grid:true,x:{label:'Calendar month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:monthTick},y:{label},marks:[Plot.ruleY([0],{stroke:'#17333b'}),Plot.barY(monthlyRows,{x:'month',y:'anomaly_mm',fill:(row:Monthly)=>row.month===month?'#ba6d3c':row.anomaly_mm<0?'#c89a79':'#4b8ba2',opacity:(row:Monthly)=>row.month===month?1:.72,title:(row:Monthly)=>`${monthNames[row.month-1]} ${row.year}: ${signed(row.anomaly_mm)} mm from its calendar-month record mean`}),Plot.dot(monthlyRows.filter((row)=>row.month===month),{x:'month',y:'anomaly_mm',fill:'#17333b',stroke:'white',strokeWidth:2,r:6})]}));
         const summary=selectedMonthly?`${monthNames[month-1]} ${year}: ${signed(selectedMonthly.anomaly_mm)} mm from that month’s 1981 to 2025 record mean in the coarse modelled grid-cell estimate.`:`${monthNames[month-1]} ${year}: monthly rainfall is not reported.`;
         setText('#explorer-status',summary);setText('#heatmap-selection',`${summary} Selection loaded into the stress test.`);
         renderEpisode();
         updateHeatmapSelection(year,month,false);
+        explorerHasRendered=true;
       };
       const selectEpisode=(id:string)=>{const episode=episodes[id];selectedEpisode=id;yearControl.value=String(episode.year);monthControl.value=String(episode.month);selectedMetric=episode.metric;metricControls.forEach((control)=>control.checked=control.value===selectedMetric);renderExplorer();};
+      document.querySelector<HTMLButtonElement>('#reset-explorer')!.addEventListener('click',()=>selectEpisode('wet-month'));
       document.querySelectorAll<HTMLButtonElement>('[data-episode]').forEach((button)=>button.addEventListener('click',()=>selectEpisode(button.dataset.episode!)));
       yearControl.addEventListener('input',()=>{selectedEpisode='';renderExplorer();});
       monthControl.addEventListener('change',()=>{selectedEpisode='';renderExplorer();});
@@ -331,7 +364,7 @@ import '../styles/global.css';
       renderExplorer();
 
       let methodsRendered=false;
-      const renderMethods=()=>{if(methodsRendered)return;methodsRendered=true;const enso=seasonal.rainfall.filter((row)=>row.nino34_anomaly_c!==null).map((row)=>({...row,date:new Date(Date.UTC(row.year,row.month-1,1))}));mount('enso-chart',Plot.plot({width:chartWidth('enso-chart'),height:280,marginLeft:58,marginBottom:44,grid:true,x:{label:'Year',tickFormat:(date:Date)=>String(date.getUTCFullYear())},y:{label:'Niño 3.4 anomaly (°C)'},marks:[Plot.ruleY([-.5,.5],{stroke:'#75868a',strokeDasharray:'3,3'}),Plot.ruleY([0],{stroke:'#17333b'}),Plot.lineY(enso,{x:'date',y:'nino34_anomaly_c',stroke:'#7d4c2d',strokeWidth:1.8})]}));const comparison=[{method:'Seasonal naïve',...seasonal.backtest.seasonal_naive},{method:'Additive Holt-Winters',...seasonal.backtest.additive_holt_winters}];mount('forecast-chart',Plot.plot({width:chartWidth('forecast-chart'),height:250,marginLeft:isMobile?125:155,marginBottom:42,grid:true,x:{label:'Held-out error (mm)'},y:{label:null},marks:[Plot.barX(comparison,{x:'mae',y:'method',fill:'#9fc9a9'}),Plot.dot(comparison,{x:'rmse',y:'method',fill:'#ba6d3c',r:6}),Plot.text(comparison,{x:'mae',y:'method',text:(row)=>`MAE ${row.mae.toFixed(1)} | RMSE ${row.rmse.toFixed(1)}`,dx:6,textAnchor:'start'})]}));setText('#forecast-caption',`Across ${seasonal.backtest.seasonal_naive.n} held-out months (${seasonal.backtest.test_period}), additive Holt-Winters reduced RMSE from ${seasonal.backtest.seasonal_naive.rmse.toFixed(1)} mm to ${seasonal.backtest.additive_holt_winters.rmse.toFixed(1)} mm. This does not validate a current forecast.`);mount('leaf-chart',Plot.plot({width:chartWidth('leaf-chart'),height:330,marginLeft:60,marginBottom:44,grid:true,x:{label:'Calendar month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:(month:number)=>months[month-1]},y:{label:'Monthly precipitation (mm)'},marks:[Plot.boxY(seasonal.rainfall,{x:'month',y:'total_mm',fill:'#9fc9a9',stroke:'#397a57',title:(row)=>`${row.year} ${months[row.month-1]}: ${row.total_mm.toFixed(0)} mm`}),Plot.dot(seasonal.distribution,{x:'month',y:'median_mm',fill:'#163b3b',r:3})]}));const locator=[{lon:-171.75,lat:-13.83,label:'MERRA-2/POWER grid point'}];mount('scope-map',Plot.plot({width:chartWidth('scope-map'),height:280,marginLeft:60,marginBottom:44,x:{label:'Longitude (°)',domain:[-172.5,-170.5],grid:true},y:{label:'Latitude (°)',domain:[-14.7,-13.1],grid:true},marks:[Plot.rect([{x1:-172.1,x2:-171.35,y1:-14.15,y2:-13.75}],{x1:'x1',x2:'x2',y1:'y1',y2:'y2',fill:'#d5e8e8',stroke:'#236a86',fillOpacity:.55}),Plot.dot(locator,{x:'lon',y:'lat',fill:'#ba6d3c',stroke:'white',strokeWidth:2,r:7}),Plot.text(locator,{x:'lon',y:'lat',text:'label',dy:-14,fontWeight:700})]}));};
+      const renderMethods=()=>{if(methodsRendered)return;methodsRendered=true;const enso=seasonal.rainfall.filter((row)=>row.nino34_anomaly_c!==null).map((row)=>({...row,date:new Date(Date.UTC(row.year,row.month-1,1))}));mount('enso-chart',Plot.plot({width:chartWidth('enso-chart'),height:280,marginLeft:58,marginBottom:44,grid:true,x:{label:'Year',tickFormat:(date:Date)=>String(date.getUTCFullYear())},y:{label:'Niño 3.4 anomaly (°C)'},marks:[Plot.ruleY([-.5,.5],{stroke:'#75868a',strokeDasharray:'3,3'}),Plot.ruleY([0],{stroke:'#17333b'}),Plot.lineY(enso,{x:'date',y:'nino34_anomaly_c',stroke:'#7d4c2d',strokeWidth:1.8})]}));mount('leaf-chart',Plot.plot({width:chartWidth('leaf-chart'),height:330,marginLeft:60,marginBottom:44,grid:true,x:{label:'Calendar month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:(month:number)=>months[month-1]},y:{label:'Monthly precipitation (mm)'},marks:[Plot.boxY(seasonal.rainfall,{x:'month',y:'total_mm',fill:'#9fc9a9',stroke:'#397a57',title:(row)=>`${row.year} ${months[row.month-1]}: ${row.total_mm.toFixed(0)} mm`}),Plot.dot(seasonal.distribution,{x:'month',y:'median_mm',fill:'#163b3b',r:3})]}));const locator=[{lon:-171.75,lat:-13.83,label:'MERRA-2/POWER grid point'}];mount('scope-map',Plot.plot({width:chartWidth('scope-map'),height:280,marginLeft:60,marginBottom:44,x:{label:'Longitude (°)',domain:[-172.5,-170.5],grid:true},y:{label:'Latitude (°)',domain:[-14.7,-13.1],grid:true},marks:[Plot.rect([{x1:-172.1,x2:-171.35,y1:-14.15,y2:-13.75}],{x1:'x1',x2:'x2',y1:'y1',y2:'y2',fill:'#d5e8e8',stroke:'#236a86',fillOpacity:.55}),Plot.dot(locator,{x:'lon',y:'lat',fill:'#ba6d3c',stroke:'white',strokeWidth:2,r:7}),Plot.text(locator,{x:'lon',y:'lat',text:'label',dy:-14,fontWeight:700})]}));};
       document.querySelector<HTMLDetailsElement>('#methods')!.addEventListener('toggle',(event)=>{if((event.currentTarget as HTMLDetailsElement).open)renderMethods();});
     </script>
   </body>

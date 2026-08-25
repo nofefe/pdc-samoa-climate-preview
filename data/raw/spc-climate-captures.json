@@ -1,0 +1,20 @@
+{
+  "captures": {
+    "rainfall": {
+      "url": "https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions",
+      "path": "data/raw/spc-samoa-rainfall-anomaly.xml",
+      "sha256": "12e53e466cee901b9ae41220bbb7d70d511a62bf7ae8c2b3da9d4ed4da16296d",
+      "bytes": "24959",
+      "content_type": "application/vnd.sdmx.genericdata+xml; version=2.1; charset=utf-8",
+      "retrieved_at_utc": "2026-08-25T12:35:00Z"
+    },
+    "sst": {
+      "url": "https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions",
+      "path": "data/raw/spc-samoa-eez-sst-anomaly.xml",
+      "sha256": "ea86f8345765a83e5f6a7f3ac6771736e858c058a86a4e267a31292fde44668d",
+      "bytes": "90836",
+      "content_type": "application/vnd.sdmx.genericdata+xml; version=2.1; charset=utf-8",
+      "retrieved_at_utc": "2026-08-25T12:35:00Z"
+    }
+  }
+}

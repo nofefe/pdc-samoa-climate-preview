@@ -1,4 +1,4 @@
-"""Minimal reproducible quality checks for the initial Samoa climate framework."""
+"""Minimal reproducible quality checks for the Samoa climate story data."""
 import json
 from pathlib import Path
 
@@ -19,4 +19,4 @@ assert all(isinstance(row[1], (int, float)) and row[1] >= 0 for row in taro), "t
 assert data["taro_yield_provenance"]["item"] == "TARO", "taro_yield: wrong item"
 assert data["taro_yield_provenance"]["unit"] == "kg/ha", "taro_yield: wrong unit"
 print(f"PASS taro_yield: {len(taro)} annual observations, {taro_years[0]}–{taro_years[-1]}")
-print("PASS: framework source data are structurally valid")
+print("PASS: story source data are structurally valid")

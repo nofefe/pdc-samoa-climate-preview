@@ -1,24 +1,23 @@
-# Evidence manifest — four-act review build
+# Evidence manifest — four-act story
 
 ## Scope
-This is a review build, not a submitted competition entry or operational climate service. The main narrative uses four visual moments to argue that an average year is a poor planning basis. It deliberately does not forecast water-system failure, disaster impacts or crop yields. Verified story values and documentary claims are recorded in `docs/story-source-audit.md`.
+This evidence manifest records the four visual moments used to argue that an average year is a poor planning basis. It does not forecast water-system failure, disaster impacts or crop yields. Verified story values and documentary claims are recorded in `docs/story-source-audit.md`.
 
 ## Initial rendered data
 
-| Dataset | Source / access URL | Framework use | Actual Samoa coverage | Spatial basis, baseline and limitations |
+| Dataset | Source / access URL | Story use | Actual Samoa coverage | Spatial basis, baseline and limitations |
 |---|---|---|---|---|
 | Precipitation anomalies (`RAIN_ANOM`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions | Hero variability chart | 1979–2025; annual; mm; 47 rows; standard-error field | Samoa-wide series. Annual total precipitation minus the 1991–2020 average annual total. The inspected metadata does not specify station/grid/national-area aggregation; not local/station evidence. |
-| Mean sea-surface-temperature anomalies (`SST_ANOM`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions | Long-run climate-context chart | Full official Samoa record: 1850–2025; framework view: 1979–2025; annual; °C | Samoa EEZ annual mean. Anomaly baseline: 1971–2000. Not a coastal/inshore or land temperature series; raw magnitudes are not comparable with rainfall anomalies. |
+| Mean sea-surface-temperature anomalies (`SST_ANOM`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions | Long-run climate-context chart | Full official Samoa record: 1850–2025; story view: 1979–2025; annual; °C | Samoa EEZ annual mean. Anomaly baseline: 1971–2000. Not a coastal/inshore or land temperature series; raw magnitudes are not comparable with rainfall anomalies. |
 | Challenge rules/data catalogue | https://pacificdatavizchallenge.org/ | Eligibility/data-list check | 2026 | Recheck immediately before submission. |
 
 ## Verified, held for the next evidence gate
 
 | Dataset / source | Exact public access URL | Verified use and limitation |
 |---|---|---|
-| **Taro yield** (`TARO`, `CROP_YIELD`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions | **Rendered in Draft 0.2.** Samoa annual country-level context, 1961–2024, kg/ha; 64 contiguous observations. Raw response retained at `data/raw/spc-samoa-taro-yield.csv`, acquired by `scripts/fetch_taro.py`. It is descriptive only: do not infer climate caused yield outcomes or forecast yield. |
-| **MERRA-2/POWER monthly precipitation** (`PRECTOTCORR`) | https://power.larc.nasa.gov/api/temporal/monthly/point | **Rendered in Draft 0.3 seasonal views.** 540 monthly records, Jan 1981–Dec 2025; mean daily mm converted to calendar-month totals; raw API response and derived CSV retained. Requested coordinate −13.83°, −171.75°. The API response identifies MERRA-2. This is a gridded point product near central Upolu, not a local gauge, catchment or Samoa-national estimate. |
-| **NOAA PSL Niño 3.4 monthly SST** | https://psl.noaa.gov/data/correlation/nina34.data | **Rendered in Draft 0.3 as Pacific climate context.** Local processing turns monthly SST into anomalies against its own 1981–2010 calendar-month baseline. It is not an official Samoa outlook, local temperature record or evidence of a Samoa/taro impact. Raw capture and deterministic processing are retained. |
-| **Retrospective seasonal-method comparison** | `scripts/build_seasonal_analysis.mjs` | **Rendered in Draft 0.3 as back-test only.** Annual rolling origins with Jan 2016–Dec 2025 held out (120 monthly outcomes) compare seasonal naïve with additive Holt–Winters. It is not a 2026 forecast, risk product or taro model. |
+| **Taro yield** (`TARO`, `CROP_YIELD`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions | **Rendered story material.** Samoa annual country-level context, 1961–2024, kg/ha; 64 contiguous observations. Raw response retained at `data/raw/spc-samoa-taro-yield.csv`, acquired by `scripts/fetch_taro.py`. It is descriptive only: do not infer climate caused yield outcomes or forecast yield. |
+| **MERRA-2/POWER monthly precipitation** (`PRECTOTCORR`) | https://power.larc.nasa.gov/api/temporal/monthly/point | **Rendered seasonal view.** 540 monthly records, Jan 1981–Dec 2025; mean daily mm converted to calendar-month totals; raw API response and derived CSV retained. Requested coordinate −13.83°, −171.75°. The API response identifies MERRA-2. This is a gridded point product near central Upolu, not a local gauge, catchment or Samoa-national estimate. |
+| **NOAA PSL Niño 3.4 monthly SST** | https://psl.noaa.gov/data/correlation/nina34.data | **Rendered Pacific climate context.** Local processing turns monthly SST into anomalies against its own 1981–2010 calendar-month baseline. It is not an official Samoa outlook, local temperature record or evidence of a Samoa/taro impact. Raw capture and deterministic processing are retained. |
 | Other disaggregated crop yields | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS..CROP_YIELD?dimensionAtObservation=AllDimensions | Samoa national, 22 crop items, 1961–2024, kg/ha. Held pending item definition, provenance and local-relevance review. |
 | Headline crop yield | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.CROP_YIELD.WS?dimensionAtObservation=AllDimensions | Samoa annual aggregate, 1961–2024, kg/ha. Do not treat as an individual crop or assume undocumented aggregation/weighting. |
 | Total population growth (`NMDI0002`) | https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_NMDI_POP,1.0/A.WS.NMDI0002._T._T._T._T._Z?dimensionAtObservation=AllDimensions | Samoa annual 1990–2025, percent. All returned observations are `E`, sourced as PDH.Stat population projections; do not label it observed census change. |
@@ -39,10 +38,10 @@ Metadata endpoints:
 
 ## Method guardrails
 - Taro is the selected opening crop because SPC describes it as Samoa’s most commonly grown root crop and preferred starchy staple. SPC’s figures on households, plantings and exports are 2014–15 historical context, not a current estimate: https://pafpnet.spc.int/policy-bank/countries/samoa. An FAO Samoa study documents that taro leaf blight devastated taro in 1993; this history is used as context, not as a statistical attribution from the series: https://www.fao.org/4/y8345e/y8345e03.htm
-- The taro yield series is a country-level annual agricultural measure. The framework does not align it with rainfall or SST in one chart, calculate correlation, infer a cause, or generate a forecast.
+- The taro yield series is a country-level annual agricultural measure. The story does not align it with rainfall or SST in one chart, calculate correlation, infer a cause, or generate a forecast.
 - The initial shared annual comparison window is 1979–2025 for rainfall and SST; the rainfall–SST–taro overlap is 1979–2024. A shared time window does not establish a relationship.
 - No causal attribution between displayed series.
-- No trend claim for rainfall in this framework.
+- No trend claim for rainfall in this story.
 - Positive or negative anomaly means relative to each series' own baseline; values are not combined.
 - Missing values remain missing.
 - Future population scenarios, seasonal outlooks and climate projections must be visually and structurally separate from observations.

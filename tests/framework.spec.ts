@@ -7,6 +7,9 @@ test('water story renders its personal framing, evidence boundary and primary ch
   await expect(page.getByText('That connection is where this story begins.')).toBeVisible();
   await expect(page.getByText('That is not a story about one village.')).toBeVisible();
   await expect(page.getByText("My father is from Vaiafai, Iva, in Savai'i")).toBeVisible();
+  await expect(page.getByRole('img', { name: /family place in Savai'i/i })).toBeVisible();
+  await expect(page.getByText('Fale aiga.')).toBeVisible();
+  await expect(page.getByText('Photograph supplied by the author and published with permission.')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What these records can and cannot tell us' })).toBeVisible();
   await expect(page.locator('#rainfall-chart svg')).toBeVisible();
   await expect(page.locator('#sst-chart svg')).toBeVisible();
@@ -19,7 +22,7 @@ test('water story renders its personal framing, evidence boundary and primary ch
 
 test('meaningful presets update the stress test and keep evidence in separate lanes', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('button', { name: /April 2016/ })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('[data-episode="wet-month"]')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('#episode-title')).toHaveText('April 2016: unusually wet month');
   await expect(page.getByLabel('Year to explore')).toHaveValue('2016');
   await expect(page.getByLabel('Month to inspect')).toHaveValue('4');
@@ -30,10 +33,14 @@ test('meaningful presets update the stress test and keep evidence in separate la
   await expect(page.getByLabel('Month to inspect')).toHaveValue('2');
   await expect(page.locator('#episode-title')).toContainText('unusually dry month');
   await expect(page.locator('#episode-what')).toContainText('211 mm below');
-  await expect(page.locator('#selected-monthly')).toContainText('−211 mm');
+  await expect(page.locator('#explorer-chart')).toHaveClass(/is-updating/);
   await expect(page.getByRole('heading', { name: 'National and ocean context' })).toBeVisible();
   await expect(page.getByRole('heading', { name: /February in 1998/ })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Taro yield in 1998/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Start with April 2016' }).click();
+  await expect(page.getByLabel('Year to explore')).toHaveValue('2016');
+  await expect(page.getByLabel('Month to inspect')).toHaveValue('4');
+  await expect(page.locator('#selected-monthly')).toContainText('+358 mm');
 });
 
 test('heat map uses one roving keyboard stop and arrow navigation', async ({ page }) => {
@@ -71,10 +78,21 @@ test('methods stay secondary and render on demand', async ({ page }) => {
   await methods.locator('summary').click();
   await expect(methods).toHaveAttribute('open', '');
   await expect(page.locator('#enso-chart svg')).toBeVisible();
-  await expect(page.locator('#forecast-chart svg')).toBeVisible();
   await expect(page.locator('#leaf-chart svg')).toBeVisible();
   await expect(page.locator('#scope-map svg')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Return to the story' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Development process' })).toBeVisible();
+});
+
+test('back-to-top control appears after reading and returns to the opening', async ({ page }) => {
+  await page.goto('/');
+  const control = page.getByRole('button', { name: 'Back to top' });
+  await expect(control).toBeHidden();
+  await page.evaluate(() => window.scrollTo(0, 1200));
+  await expect(control).toBeVisible();
+  await expect(page.locator('#story-progress')).toHaveAttribute('aria-valuenow', /[1-9]/);
+  await control.click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(2);
 });
 
 test('mobile story is legible, contained and uses controls as the primary interaction', async ({ page }) => {
