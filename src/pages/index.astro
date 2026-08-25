@@ -5,84 +5,90 @@ import '../styles/global.css';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="An interactive Samoa climate data story about planning honestly for variability." />
-    <title>The Year We Plan For Does Not Exist</title>
+    <meta name="description" content="An interactive Samoa climate data story about water, variability and planning with place." />
+    <title>When Water Changes, Everything Changes</title>
   </head>
   <body>
     <main>
       <header class="hero wrap">
         <div class="hero-copy">
           <p class="eyebrow">PACIFIC DATAVIZ CHALLENGE 2026</p>
-          <h1>The Year We Plan For Does Not Exist</h1>
-          <p class="standfirst">Use history to choose the tests, and local knowledge to choose the response.</p>
-          <p class="positionality">I grew up in Aotearoa with a Māori mum and a Samoan dad. For me, the Pacific is not an abstract region on a chart; it is family. This is a personal reading of public data, not a claim to speak for every Samoan community.</p>
-          <p class="dek">Looking at Samoa’s climate record, one question keeps returning: <strong>what kind of year are we planning for?</strong> The data gives no single answer. It shows why an average year is a poor plan—and why resilience needs more than prediction.</p>
+          <h1>When Water Changes, Everything Changes</h1>
+          <p class="standfirst">Samoa cannot plan for an average water year. In the official 1979–2025 record, 2020 has the highest rainfall anomaly and 2022 the second-lowest.</p>
+          <p class="signature">Two opposite years. One planning problem.</p>
+          <p class="positionality">My father is from Vaiafai, Iva, in Savai'i, and much of our aiga still lives there. I grew up in Aotearoa with a Māori mum and a Samoan dad. For me, Samoa is family, not an abstract region on a chart. This is a personal reading of public data, not a claim to speak for every Samoan community.</p>
+          <p class="personal-bridge">Water shapes ordinary things that hold aiga together: food, travel, gathering and care. That is why this story starts with family and then turns to public data.</p>
+          <p class="dek">This reversal shows observed climate variability. It does not prove climate change caused these particular years. The records below do not describe Savai'i village by village, but they show why an average year is a poor plan.</p>
           <div class="opening-signals" aria-label="Opening evidence">
             <article><span>2020 rainfall anomaly</span><strong>+27.3 mm</strong><small>Samoa-wide official indicator</small></article>
             <article><span>2022 rainfall anomaly</span><strong>−20.7 mm</strong><small>Samoa-wide official indicator</small></article>
             <article><span>2024 SST anomaly</span><strong>+0.8°C</strong><small>Samoa EEZ aggregate</small></article>
           </div>
+          <p class="source-line">Source: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions" target="_blank" rel="noreferrer">SPC/Pacific Data Hub rainfall anomaly</a> and <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions" target="_blank" rel="noreferrer">EEZ SST anomaly</a>; retrieved 2026-08-17.</p>
         </div>
         <img class="taro-object" src="/taro-leaf-object.svg" alt="" aria-hidden="true" />
       </header>
 
-      <section class="scope-panel wrap" aria-labelledby="scope-panel-title">
+      <section class="scope-panel wrap reveal" aria-labelledby="scope-panel-title">
         <p class="section-label">THE EVIDENCE BOUNDARY</p>
-        <h2 id="scope-panel-title">What these data can and cannot tell us</h2>
+        <h2 id="scope-panel-title">What this water story can and cannot show</h2>
         <div class="scope-columns">
-          <div><h3>They can</h3><ul><li>show conditions national plans should be tested against;</li><li>reveal reversals hidden by averages;</li><li>document one history of adaptation after a major crop shock.</li></ul></div>
-          <div><h3>They cannot</h3><ul><li>prove that ocean temperature caused a rainfall or crop outcome;</li><li>predict a particular village, catchment, farm or household impact;</li><li>choose a locally appropriate response without local evidence and consent.</li></ul></div>
+          <div><h3>They can</h3><ul><li>show water conditions national plans should be tested against;</li><li>make reversals hidden by averages easier to see;</li><li>document one history of adaptation after a major crop shock.</li></ul></div>
+          <div><h3>They cannot</h3><ul><li>prove that ocean temperature caused a rainfall or crop outcome;</li><li>describe a particular Savai'i village, catchment, farm or household;</li><li>choose a locally appropriate response without local evidence and consent.</li></ul></div>
         </div>
       </section>
 
-      <section id="act-one" class="wrap story-section act" aria-labelledby="act-one-title">
-        <div class="act-number">ACT 1 · THE CONDITIONS TO TEST</div>
+      <section id="act-one" class="wrap story-section act reveal" aria-labelledby="act-one-title">
+        <div class="act-number">ACT 1 · WHEN WATER CHANGES</div>
         <div class="section-intro">
-          <h2 id="act-one-title">The ocean backdrop is warming. Rainfall still refuses to behave like a straight line.</h2>
-          <p>Samoa’s official annual rainfall indicator reversed from above its reference average in 2020 to below it in 2021 and 2022. The EEZ sea-surface-temperature series is shown separately as a long-run contextual signal—not as a cause of that reversal.</p>
+          <h2 id="act-one-title">Water has a rhythm. The records show why it cannot be taken for granted.</h2>
+          <p>Samoa's official annual rainfall indicator moved from above its reference average in 2020 to below it in 2021 and 2022. The EEZ sea-surface-temperature series sits beside it as context, not as an explanation for the reversal.</p>
         </div>
         <figure class="data-figure" aria-labelledby="rainfall-figure-title rainfall-caption">
-          <div class="figure-heading"><div><span class="scope-badge">Samoa-wide official indicator</span><h3 id="rainfall-figure-title">A wet-to-dry reversal in three annual readings</h3></div><p>1991–2020 baseline</p></div>
+          <div class="figure-heading"><div><span class="scope-badge">Samoa-wide official indicator</span><h3 id="rainfall-figure-title">A wet-to-dry reversal in three annual readings</h3></div><p>1991 to 2020 baseline</p></div>
           <div id="rainfall-chart" class="chart" role="img" aria-label="Annual Samoa precipitation anomalies, with 2020, 2021 and 2022 highlighted"></div>
-          <p class="chart-summary"><strong>Read this first:</strong> +27.3 mm in 2020 became −18.1 mm in 2021 and −20.7 mm in 2022. These are annual Samoa-wide anomalies, not local drought declarations.</p>
+          <p class="chart-summary"><strong>Two opposite years. One planning problem.</strong> +27.3 mm in 2020 became −18.1 mm in 2021 and −20.7 mm in 2022. These are annual Samoa-wide anomalies.</p>
           <figcaption id="rainfall-caption">Annual precipitation anomaly in millimetres, with reported standard error. Positive and negative values are relative to this dataset’s own baseline.</figcaption>
+          <p class="source-line">Source: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions" target="_blank" rel="noreferrer">Pacific Community (SPC), Pacific Data Hub .Stat, RAIN_ANOM</a> · Samoa-wide · annual · 1991–2020 baseline · <a href="/data/samoa-climate.json" target="_blank" rel="noreferrer">frozen derived data</a>.</p>
         </figure>
         <figure class="data-figure compact-figure" aria-labelledby="sst-figure-title sst-caption">
-          <div class="figure-heading"><div><span class="scope-badge scope-badge-sst">Samoa EEZ aggregate</span><h3 id="sst-figure-title">The warming ocean is the background condition</h3></div><p>1971–2000 baseline</p></div>
+          <div class="figure-heading"><div><span class="scope-badge scope-badge-sst">Samoa EEZ aggregate</span><h3 id="sst-figure-title">The warming ocean is the background condition</h3></div><p>1971 to 2000 baseline</p></div>
           <div id="sst-chart" class="chart compact-chart" role="img" aria-label="Annual Samoa EEZ sea-surface-temperature anomalies"></div>
           <p class="chart-summary"><strong>2024:</strong> +0.8°C in the EEZ annual series. This is not a coastal or inshore temperature record and is not evidence that SST caused a rainfall outcome.</p>
           <figcaption id="sst-caption">Annual mean sea-surface-temperature anomaly across Samoa’s Exclusive Economic Zone.</figcaption>
+          <p class="source-line">Source: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions" target="_blank" rel="noreferrer">Pacific Community (SPC), Pacific Data Hub .Stat, SST_ANOM</a> · Samoa EEZ aggregate · annual · 1971–2000 baseline · <a href="/data/samoa-climate.json" target="_blank" rel="noreferrer">frozen derived data</a>.</p>
         </figure>
       </section>
 
       <section id="act-two" class="story-band">
-        <div class="wrap story-section act" aria-labelledby="act-two-title">
-          <div class="act-number">ACT 2 · THE AVERAGE HIDES THE MONTH</div>
+        <div class="wrap story-section act reveal" aria-labelledby="act-two-title">
+          <div class="act-number">ACT 2 · WHEN RAIN ARRIVES ON DIFFERENT TERMS</div>
           <div class="section-intro">
-            <h2 id="act-two-title">A seasonal pattern can be real without making any particular month predictable.</h2>
-            <p>The near-Upolu grid point has a clear wet-to-dry seasonal rhythm. Individual months still depart sharply from that rhythm. Start with an authored episode, then use the controls to test another year and month.</p>
+            <h2 id="act-two-title">A seasonal pattern can be familiar without making a particular month predictable.</h2>
+            <p>The near-Upolu grid point has a wet and dry rhythm across the year. Individual months can still sit far from that pattern. Start with an episode, then use the controls to test another year and month.</p>
           </div>
 
           <figure class="data-figure" aria-labelledby="normal-title normal-caption">
-            <div class="figure-heading"><div><span class="scope-badge scope-badge-grid">Modelled grid point near central Upolu</span><h3 id="normal-title">The seasonal normal provides orientation—not a forecast</h3></div><p>1981–2025 monthly means</p></div>
+            <div class="figure-heading"><div><span class="scope-badge scope-badge-grid">Coarse MERRA-2 grid-cell estimate near central Upolu</span><h3 id="normal-title">A within-model monthly average gives orientation, not a local forecast</h3></div><p>1981 to 2025 calendar-month record mean</p></div>
             <div id="seasonal-normal-chart" class="chart compact-chart" role="img" aria-label="Mean monthly rainfall near central Upolu"></div>
-            <p class="chart-summary">The wet season is visible in the long-run monthly means. The heat map below shows why no individual month should be assumed to match that profile.</p>
-            <figcaption id="normal-caption">NASA POWER/MERRA-2 monthly precipitation at −13.83°, −171.75°. This is a modelled grid point, not a rain gauge or Samoa-wide estimate.</figcaption>
+            <p class="chart-summary">This coarse modelled estimate is used to compare months within the same record. It is not used as local rainfall, a rain-gauge reading or a Samoa-wide estimate.</p>
+            <figcaption id="normal-caption">NASA POWER/MERRA-2 PRECTOTCORR at −13.83°, −171.75°. Mean daily precipitation in mm was multiplied by calendar days. Accessed for this build in August 2026.</figcaption>
+            <p class="source-line">Source: <a href="https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR&community=AG&longitude=-171.75&latitude=-13.83&start=1981&end=2025&format=JSON" target="_blank" rel="noreferrer">NASA POWER API, PRECTOTCORR</a> · MERRA-2 grid cell · retrieved 2026-08-18 · API v2.9.7 · <a href="/data/seasonal-analysis.json" target="_blank" rel="noreferrer">frozen derived data</a>.</p>
           </figure>
 
           <section class="stress-test" aria-labelledby="stress-title">
-            <div class="stress-heading"><div><p class="section-label">PLANNING STRESS TEST</p><h3 id="stress-title">Choose a historical condition worth testing</h3></div><p>Presets explain why the date matters. The year and month controls remain available for your own exploration.</p></div>
+            <div class="stress-heading"><div><p class="section-label">WATER STRESS TEST</p><h3 id="stress-title">Choose a historical water condition worth testing</h3></div><p>Each preset explains why the date matters. Use the year and month controls to explore another condition.</p></div>
             <div class="episode-presets" aria-label="Historical episode presets">
               <button type="button" data-episode="taro-low" aria-pressed="false"><strong>1994</strong><span>Taro yield low</span></button>
               <button type="button" data-episode="wet-month" aria-pressed="true"><strong>April 2016</strong><span>Unusually wet month</span></button>
               <button type="button" data-episode="dry-month" aria-pressed="false"><strong>February 1998</strong><span>Unusually dry month</span></button>
-              <button type="button" data-episode="rain-reversal" aria-pressed="false"><strong>2020–2022</strong><span>Wet-to-dry reversal</span></button>
+              <button type="button" data-episode="rain-reversal" aria-pressed="false"><strong>2020 to 2022</strong><span>Wet-to-dry reversal</span></button>
               <button type="button" data-episode="latest" aria-pressed="false"><strong>2024</strong><span>Latest shared annual record</span></button>
             </div>
 
             <div class="episode-explainer" aria-live="polite">
               <p class="episode-kicker">SELECTED EPISODE</p>
-              <h4 id="episode-title">April 2016 — unusually wet month</h4>
+              <h4 id="episode-title">April 2016: unusually wet month</h4>
               <div class="episode-grid">
                 <div><span>What happened</span><p id="episode-what"></p></div>
                 <div><span>Evidence scope</span><p id="episode-scope"></p></div>
@@ -106,9 +112,8 @@ import '../styles/global.css';
                 </select>
               </label>
               <fieldset class="metric-control">
-                <legend>Show the monthly profile as</legend>
-                <label><input type="radio" name="rainfall-metric" value="total_mm" /> Monthly total</label>
-                <label><input type="radio" name="rainfall-metric" value="anomaly_mm" checked /> Departure from monthly normal</label>
+                <legend>Monthly profile</legend>
+                <p>All monthly values are shown only as departures from the same calendar month’s 1981–2025 record mean.</p>
               </fieldset>
             </div>
 
@@ -116,72 +121,77 @@ import '../styles/global.css';
               <section class="evidence-lane" aria-labelledby="official-lane-title">
                 <div class="lane-heading"><span class="scope-badge">Official Samoa-wide or EEZ indicators</span><h4 id="official-lane-title">National and ocean context</h4></div>
                 <div class="lane-cards lane-cards-two">
-                  <article><p>Samoa rainfall anomaly</p><strong id="selected-rainfall">—</strong><small>Annual · Samoa-wide · 1991–2020 baseline</small></article>
-                  <article><p>Samoa EEZ SST anomaly</p><strong id="selected-sst">—</strong><small>Annual · EEZ aggregate · 1971–2000 baseline</small></article>
+                  <article><p>Samoa rainfall anomaly</p><strong id="selected-rainfall">Not reported</strong><small>Annual, Samoa-wide, 1991 to 2020 baseline</small></article>
+                  <article><p>Samoa EEZ SST anomaly</p><strong id="selected-sst">Not reported</strong><small>Annual, EEZ aggregate, 1971 to 2000 baseline</small></article>
                 </div>
               </section>
               <section class="evidence-lane" aria-labelledby="grid-lane-title">
                 <div class="lane-heading"><span class="scope-badge scope-badge-grid">Modelled grid point near central Upolu</span><h4 id="grid-lane-title"><span id="selected-month">April</span> in <span id="grid-year">2016</span></h4></div>
-                <div class="lane-cards"><article><p>Monthly rainfall</p><strong id="selected-monthly">—</strong><small>Total · departure from its own calendar-month normal</small></article></div>
+                <div class="lane-cards"><article><p>Modelled monthly departure</p><strong id="selected-monthly">Not reported</strong><small>Relative to the same calendar month’s 1981–2025 record mean</small></article></div>
                 <div id="explorer-chart" class="chart explorer-chart" data-metric="anomaly_mm" role="img" aria-label="Selected year monthly rainfall profile"></div>
                 <p id="explorer-status" class="selection-status" role="status" aria-live="polite"></p>
+            <p class="source-line">Source: <a href="https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR&community=AG&longitude=-171.75&latitude=-13.83&start=1981&end=2025&format=JSON" target="_blank" rel="noreferrer">NASA POWER API, PRECTOTCORR</a> · MERRA-2 grid cell at −13.83°, −171.75° · calendar-month departures only · <a href="/data/seasonal-analysis.json" target="_blank" rel="noreferrer">frozen derived data</a>.</p>
               </section>
               <section class="evidence-lane" aria-labelledby="food-lane-title">
                 <div class="lane-heading"><span class="scope-badge scope-badge-food">Food-resilience history</span><h4 id="food-lane-title">Taro yield in <span id="taro-year">2016</span></h4></div>
-                <div class="lane-cards"><article><p>Reported taro yield</p><strong id="selected-taro">—</strong><small>Annual national/country series · descriptive only</small></article></div>
+                <div class="lane-cards"><article><p>Reported taro yield</p><strong id="selected-taro">Not reported</strong><small>Annual national/country series, descriptive only</small></article></div>
               </section>
             </div>
           </section>
 
           <figure class="data-figure heatmap-figure" aria-labelledby="heatmap-title heatmap-caption">
-            <div class="figure-heading"><div><span class="scope-badge scope-badge-grid">Modelled grid point near central Upolu</span><h3 id="heatmap-title">Every month compared with its own normal</h3></div><p>Blue = wetter · rust = drier</p></div>
+            <div class="figure-heading"><div><span class="scope-badge scope-badge-grid">Coarse MERRA-2 grid-cell estimate near central Upolu</span><h3 id="heatmap-title">Every month compared with its own record mean</h3></div><p>−211 mm drier · 0 · +358 mm wetter</p></div>
             <p class="mobile-interaction-note">On mobile, use the year and month controls above. The heat map remains available as an overview.</p>
             <div id="rainfall-heatmap" class="chart heatmap" aria-label="Year-by-month rainfall anomaly heat map"></div>
             <p id="heatmap-selection" class="selection-status" role="status" aria-live="polite"></p>
-            <p class="chart-summary">April 2016 is the wettest departure in this 1981–2025 grid-point record (+358 mm); February 1998 is the driest (−211 mm). Those are historical modelled values at one grid point—not local impact reports.</p>
+            <p class="chart-summary">April 2016 is the wettest departure in this 1981 to 2025 grid-point record (+358 mm); February 1998 is the driest (−211 mm). Those are historical modelled values at one grid point, not local impact reports.</p>
             <figcaption id="heatmap-caption">Keyboard: focus the grid once, then use arrow keys to move by month or year; press Enter to load a cell into the explorer. Only one heat-map cell is in the tab order.</figcaption>
+            <p class="source-line">Source: <a href="https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR&community=AG&longitude=-171.75&latitude=-13.83&start=1981&end=2025&format=JSON" target="_blank" rel="noreferrer">NASA POWER API, PRECTOTCORR</a> · MERRA-2 grid cell · 1981–2025 calendar-month record mean · <a href="/data/seasonal-analysis.json" target="_blank" rel="noreferrer">frozen derived data</a>.</p>
           </figure>
         </div>
       </section>
 
-      <section id="act-three" class="wrap story-section act" aria-labelledby="act-three-title">
-        <div class="act-number">ACT 3 · RESILIENCE AFTER SHOCK</div>
+      <section id="act-three" class="wrap story-section act reveal" aria-labelledby="act-three-title">
+        <div class="act-number">ACT 3 · FOOD NEEDS OPTIONS</div>
         <div class="section-intro">
-          <h2 id="act-three-title">Resilience is not knowing the next shock. It is having more than one way to respond.</h2>
-          <p>The 1993 taro-leaf-blight outbreak was a disease crisis, not proof of a climate effect. Its documented response still offers a resilience precedent: broaden diversity, share genetic resources, involve farmers in evaluation and keep adapting.</p>
+          <h2 id="act-three-title">When conditions shift, food systems need more than one way to respond.</h2>
+          <p>The 1993 taro-leaf-blight outbreak was a disease crisis, not evidence of a climate effect. FAO documents a response built around a broader genetic base, regional exchange and on-farm farmer evaluation. That makes the history relevant to adaptation, even though this yield series cannot assign causes by itself.</p>
         </div>
         <figure class="data-figure" aria-labelledby="taro-title taro-caption">
-          <div class="figure-heading"><div><span class="scope-badge scope-badge-food">Food-resilience history</span><h3 id="taro-title">Shock, low point and a long recovery</h3></div><p>Annual taro yield · kg/ha</p></div>
+          <div class="figure-heading"><div><span class="scope-badge scope-badge-food">Food-resilience history</span><h3 id="taro-title">The documented outbreak, the 1994 low and a partial recovery</h3></div><p>Annual taro yield · kg/ha</p></div>
           <div id="taro-chart" class="chart" role="img" aria-label="Annual Samoa taro yield with 1993 outbreak, 1994 low and recovery milestones annotated"></div>
-          <p class="chart-summary"><strong>Recorded series:</strong> 3,409.1 kg/ha in 1993; 1,500 kg/ha in 1994; 5,000 kg/ha in 2000; 5,574.6 kg/ha in 2024. The line describes yield—it does not attribute causes by itself.</p>
+          <p class="chart-summary"><strong>Recorded series:</strong> 3,409.1 kg/ha in 1993; 1,500 kg/ha in 1994; 5,000 kg/ha in 2000; 5,574.6 kg/ha in 2024. The series was already falling before the documented outbreak, and 2024 remains below earlier peaks. It describes yield, not causes.</p>
           <figcaption id="taro-caption">FAO documents the 1993 outbreak and a participatory improvement programme involving farmers, researchers, regional networks and a broader genetic base.</figcaption>
+          <p class="source-line">Yield source: <a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions" target="_blank" rel="noreferrer">Pacific Community (SPC), Pacific Data Hub .Stat, Samoa taro yield</a> · country-level · annual · kg/ha · 1961–2024. Outbreak history: <a href="https://www.fao.org/4/i2554e/i2554e00.pdf" target="_blank" rel="noreferrer">FAO taro improvement programme</a>.</p>
         </figure>
         <div class="adaptation-bridge">
           <p class="section-label">A CURRENT POLICY CONNECTION</p>
           <h3>More options remain part of Samoa’s adaptation agenda.</h3>
+          <p>The blight was not a climate event. It shows why a food system needs more than one option when a major shock arrives.</p>
           <p>Samoa’s NDC 3.0 sets a 2035 target to develop and distribute at least three climate-resilient crop varieties adapted to Samoa’s agro-ecological zones. It also states that adoption requires consent from farmers and commercial and community-based farms.</p>
           <a href="https://www.mnre.gov.ws/wp-content/uploads/2026/01/Samoa-FINAL-NDC3.0_READYTOPRINT_10.12.2025.pdf">Read Samoa’s NDC 3.0</a>
         </div>
       </section>
 
       <section id="act-four" class="conclusion-band">
-        <div class="wrap story-section act" aria-labelledby="act-four-title">
-          <div class="act-number">ACT 4 · PLAN FOR THE RANGE; DECIDE IN PLACE</div>
+        <div class="wrap story-section act reveal" aria-labelledby="act-four-title">
+          <div class="act-number">ACT 4 · PLAN FOR THE RANGE, DECIDE IN PLACE</div>
           <div class="section-intro">
-            <h2 id="act-four-title">National data can identify the tests. Communities help determine the response.</h2>
-            <p>Samoa’s NDC 3.0 says Community Integrated Management plans enable each of Samoa’s 368 villages to identify locally relevant adaptation measures and draw on local knowledge. That is the destination of this story—not a national dashboard pretending to make local decisions.</p>
+            <h2 id="act-four-title">National data can identify the tests. Communities determine the response.</h2>
+            <p>Samoa's NDC 3.0 says Community Integrated Management plans enable each of Samoa's 368 villages to identify locally relevant adaptation measures and draw on local knowledge. This story can frame questions. It cannot make local decisions.</p>
+            <p class="signature signature-inverse">Two opposite years. One planning problem.</p>
           </div>
           <div class="action-cards">
-            <article><span>1</span><h3>Stress-test national plans</h3><p>Test wet years, dry years and unusual months—not one average scenario.</p></article>
+            <article><span>1</span><h3>Stress-test national plans</h3><p>Test wet years, dry years and unusual months, not one average scenario.</p></article>
             <article><span>2</span><h3>Match evidence to the decision</h3><p>National, EEZ and grid-point evidence can frame questions. It cannot replace local observations or judgement.</p></article>
             <article><span>3</span><h3>Build adaptive options</h3><p>Crop diversity, farmer-led trials, community planning, local knowledge and consent are resilience infrastructure.</p></article>
           </div>
-          <p class="closing-personal">My family connects me to a Pacific larger than any chart. The data cannot tell a village what choice belongs in its place. It can tell us which conditions our plans must be ready to face.</p>
-          <blockquote>There is no single year to plan for. There is only the range we prepare for—and the relationships we prepare with.</blockquote>
+          <p class="closing-personal">My family connects me to a Samoa larger than any chart. Water supports the ordinary things that hold aiga together: food, travel, gathering and care. The data cannot tell a village which choice belongs in its place. It can show the conditions our plans must be ready to face.</p>
+          <blockquote>When water changes, everything changes. Planning starts with the range of conditions we may face, then continues with the people who live with them.</blockquote>
         </div>
       </section>
 
-      <section class="wrap methods-section" aria-labelledby="methods-heading">
+      <section class="wrap methods-section reveal" aria-labelledby="methods-heading">
         <details id="methods">
           <summary><span><span class="section-label">APPENDIX</span><strong id="methods-heading">Methods, data and limitations</strong></span><span aria-hidden="true">+</span></summary>
           <div class="methods-content">
@@ -191,16 +201,16 @@ import '../styles/global.css';
             <section><h3>Geographic scope</h3><p>The locator shows only the disclosed MERRA-2/POWER sample coordinate. It is not a risk map.</p><div id="scope-map" class="chart" role="img" aria-label="Schematic locator for the near-Upolu grid point"></div></section>
             <section class="methods-notes"><h3>Data treatment and limitations</h3><ul><li>Missing values remain missing; they are never converted to zero.</li><li>Rainfall, SST, taro yield and Niño 3.4 retain separate units, baselines and spatial scopes.</li><li>No displayed alignment is treated as causal evidence.</li><li>The seasonal model comparison is retrospective and does not produce an operational outlook.</li><li>Raw source captures and deterministic transformations are retained in the project repository.</li></ul></section>
             <section class="sources"><h3>Sources</h3><ul>
-              <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub — Samoa rainfall anomaly</a></li>
-              <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub — Samoa EEZ SST anomaly</a></li>
-              <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub — Samoa taro yield</a></li>
-              <li><a href="https://power.larc.nasa.gov/">NASA POWER/MERRA-2 — monthly precipitation</a></li>
-              <li><a href="https://psl.noaa.gov/data/correlation/nina34.data">NOAA PSL — Niño 3.4 monthly SST</a></li>
-              <li><a href="https://www.fao.org/4/i2554e/i2554e00.pdf">FAO — The taro improvement programme in Samoa</a></li>
-              <li><a href="https://www.mnre.gov.ws/wp-content/uploads/2026/01/Samoa-FINAL-NDC3.0_READYTOPRINT_10.12.2025.pdf">Government of Samoa — NDC 3.0</a></li>
+              <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.RAIN_ANOM.WS?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub: Samoa rainfall anomaly</a></li>
+              <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_CLIMATE_CHANGE,1.0/A.SST_ANOM.WS?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub: Samoa EEZ SST anomaly</a></li>
+              <li><a href="https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_AGRICULTURAL_PRODUCTION,1.0/A.WS.TARO.CROP_YIELD?dimensionAtObservation=AllDimensions">SPC/Pacific Data Hub: Samoa taro yield</a></li>
+              <li><a href="https://power.larc.nasa.gov/">NASA POWER/MERRA-2: monthly precipitation</a></li>
+              <li><a href="https://psl.noaa.gov/data/correlation/nina34.data">NOAA PSL: Niño 3.4 monthly SST</a></li>
+              <li><a href="https://www.fao.org/4/i2554e/i2554e00.pdf">FAO: The taro improvement programme in Samoa</a></li>
+              <li><a href="https://www.mnre.gov.ws/wp-content/uploads/2026/01/Samoa-FINAL-NDC3.0_READYTOPRINT_10.12.2025.pdf">Government of Samoa: NDC 3.0</a></li>
               <li><a href="https://pacificdatavizchallenge.org/sites/default/files/2026-05/Pacific-Dataviz-Challenge-2026-rules-reglement.pdf">Pacific Dataviz Challenge 2026 rules</a></li>
             </ul><p>Accessed and frozen for this review build in August 2026. Dataset-specific reuse terms remain a final submission check.</p></section>
-            <section class="process-note"><h3>Development process</h3><p>This review build uses AI-assisted coding and drafting. The competition rules permit supportive AI use, while requiring the participant’s own creative and analytical judgement. Final narrative, cultural framing, analysis and submission decisions therefore remain explicit human review gates.</p></section>
+            <section class="process-note"><h3>Authorship and development process</h3><p>The entrant conceived the question, selected the datasets and transformations, interpreted the results, and made the cultural, narrative and visual-design decisions. AI-assisted work was limited to coding support, debugging, accessibility checks and wording alternatives. The entrant retains final editorial and submission responsibility.</p><p>This production URL is intended to remain publicly accessible through 31 August 2029.</p></section>
           </div>
         </details>
       </section>
@@ -214,8 +224,21 @@ import '../styles/global.css';
       type Distribution = {month:number; mean_mm:number; p10_mm:number; q1_mm:number; median_mm:number; q3_mm:number; p90_mm:number; n:number};
       type Data = { rainfall:Row[]; sst:Row[]; taro_yield:YieldRow[] };
       type Seasonal = {rainfall:Monthly[]; distribution:Distribution[]; backtest:{test_period:string; seasonal_naive:{mae:number;rmse:number;n:number}; additive_holt_winters:{mae:number;rmse:number;n:number}; winner:string}};
-      type Metric = 'total_mm' | 'anomaly_mm';
+      type Metric = 'anomaly_mm';
       type Episode = {title:string;year:number;month:number;metric:Metric;what:string;scope:string;question:string;limit:string};
+
+      document.documentElement.classList.add('js');
+      const revealObserver = matchMedia('(prefers-reduced-motion: reduce)').matches ? null : new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll<HTMLElement>('.reveal').forEach((section) => {
+        if (revealObserver) revealObserver.observe(section);
+        else section.classList.add('is-visible');
+      });
 
       const [data, seasonal] = await Promise.all([
         fetch('/data/samoa-climate.json').then((response) => response.json()) as Promise<Data>,
@@ -245,18 +268,18 @@ import '../styles/global.css';
       mount('sst-chart', Plot.plot({width:chartWidth('sst-chart'),height:isMobile?245:265,marginLeft:58,marginBottom:44,grid:true,x:{label:'Year',tickFormat:yearTick},y:{label:'SST anomaly (°C)'},marks:[
         Plot.ruleY([0],{stroke:'#17333b'}),Plot.areaY(sst,{x:'year',y:'anomaly',fill:'#f1d8c8'}),Plot.lineY(sst,{x:'year',y:'anomaly',stroke:'#c14d32',strokeWidth:2.5,title:(row)=>`${row.year}: ${signed(row.anomaly,2)} °C`}),Plot.dot(sst.filter((row)=>row.year===2024),{x:'year',y:'anomaly',fill:'#c14d32',stroke:'white',strokeWidth:2,r:6}),Plot.text(sst.filter((row)=>row.year===2024),{x:'year',y:'anomaly',text:()=>'+0.8°C',dx:-28,dy:-12,fontWeight:700})
       ]}));
-      mount('seasonal-normal-chart', Plot.plot({width:chartWidth('seasonal-normal-chart'),height:isMobile?230:260,marginLeft:58,marginBottom:44,grid:true,x:{label:'Calendar month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:monthTick},y:{label:'Mean monthly rainfall (mm)'},marks:[Plot.areaY(seasonal.distribution,{x:'month',y:'mean_mm',fill:'#d5e8e8'}),Plot.lineY(seasonal.distribution,{x:'month',y:'mean_mm',stroke:'#236a86',strokeWidth:3}),Plot.dot(seasonal.distribution,{x:'month',y:'mean_mm',fill:'#236a86',r:4,title:(row)=>`${monthNames[row.month-1]} mean: ${row.mean_mm.toFixed(0)} mm`})]}));
+      mount('seasonal-normal-chart', Plot.plot({width:chartWidth('seasonal-normal-chart'),height:isMobile?230:260,marginLeft:58,marginBottom:44,grid:true,x:{label:'Calendar month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:monthTick},y:{label:'Modelled monthly estimate (mm)'},marks:[Plot.areaY(seasonal.distribution,{x:'month',y:'mean_mm',fill:'#d5e8e8'}),Plot.lineY(seasonal.distribution,{x:'month',y:'mean_mm',stroke:'#236a86',strokeWidth:3}),Plot.dot(seasonal.distribution,{x:'month',y:'mean_mm',fill:'#236a86',r:4,title:(row)=>`${monthNames[row.month-1]} record mean: ${row.mean_mm.toFixed(0)} mm`})]}));
       mount('taro-chart', Plot.plot({width:chartWidth('taro-chart'),height:isMobile?335:390,marginLeft:72,marginBottom:46,grid:true,x:{label:'Year',tickFormat:yearTick},y:{label:'Taro yield (kg/ha)'},marks:[
         Plot.ruleX([1993],{stroke:'#ba6d3c',strokeDasharray:'4,3'}),Plot.lineY(taroYield,{x:'year',y:'yieldKgHa',stroke:'#397a57',strokeWidth:2.6,title:(row)=>`${row.year}: ${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:1})} kg/ha`}),Plot.dot(taroYield.filter((row)=>[1993,1994,2000,2024].includes(row.year)),{x:'year',y:'yieldKgHa',fill:'#397a57',stroke:'white',strokeWidth:2,r:6}),
-        ...(isMobile?[]:[Plot.text(taroYield.filter((row)=>row.year===1993),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:-24,dy:-18,fontWeight:700}),Plot.text(taroYield.filter((row)=>row.year===1994),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:20,dy:20,fontWeight:700}),Plot.text(taroYield.filter((row)=>row.year===2000),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:20,dy:-18,fontWeight:700}),Plot.text(taroYield.filter((row)=>row.year===2024),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:-27,dy:-18,fontWeight:700})])
+        ...(isMobile?[]:[Plot.text(taroYield.filter((row)=>row.year===1993),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:-40,dy:-28,fontWeight:700}),Plot.text(taroYield.filter((row)=>row.year===1994),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:38,dy:30,fontWeight:700}),Plot.text(taroYield.filter((row)=>row.year===2000),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:20,dy:-18,fontWeight:700}),Plot.text(taroYield.filter((row)=>row.year===2024),{x:'year',y:'yieldKgHa',text:(row)=>`${row.year}\n${row.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:0})}`,dx:-27,dy:-18,fontWeight:700})])
       ]}));
 
       const episodes:Record<string,Episode> = {
-        'taro-low':{title:'1994 — taro yield low',year:1994,month:1,metric:'total_mm',what:'The country-level taro-yield series reports 1,500 kg/ha, its lowest value in the displayed record.',scope:'Annual national/country taro-yield series; the 1993 disease history comes from FAO documentation.',question:'Which crop-diversity, breeding and farmer-evaluation options would keep recovery pathways open?',limit:'The yield line alone cannot identify causes or describe conditions on a particular farm.'},
-        'wet-month':{title:'April 2016 — unusually wet month',year:2016,month:4,metric:'anomaly_mm',what:'The near-Upolu grid point reports 522 mm—358 mm above its April normal and the wettest departure in this monthly record.',scope:'NASA POWER/MERRA-2 grid point at −13.83°, −171.75°; not a rain gauge.',question:'Would plans still function under a month this far above the seasonal profile?',limit:'It cannot establish rainfall or impacts for a village, catchment, farm or household.'},
-        'dry-month':{title:'February 1998 — unusually dry month',year:1998,month:2,metric:'anomaly_mm',what:'The near-Upolu grid point reports 36 mm—211 mm below its February normal and the driest departure in this monthly record.',scope:'NASA POWER/MERRA-2 grid point at −13.83°, −171.75°; not a Samoa-wide estimate.',question:'What fails if a normally wet-season month arrives this far below its historical profile?',limit:'It does not report water availability, crop stress or household impacts.'},
-        'rain-reversal':{title:'2020–2022 — wet-to-dry reversal',year:2020,month:1,metric:'anomaly_mm',what:'The official annual rainfall indicator moved from +27.3 mm in 2020 to −18.1 mm in 2021 and −20.7 mm in 2022.',scope:'Samoa-wide official annual indicator relative to its 1991–2020 baseline.',question:'Can a plan absorb opposite annual conditions in quick succession?',limit:'Annual national anomalies cannot declare a local drought or explain why the reversal occurred.'},
-        'latest':{title:'2024 — latest shared annual record',year:2024,month:1,metric:'total_mm',what:'The shared annual record reports an EEZ SST anomaly of +0.8°C and taro yield of 5,574.6 kg/ha; the indicators remain separate.',scope:'Samoa EEZ annual SST plus a national/country taro-yield series, with different units and baselines.',question:'Which current conditions belong in the next planning review?',limit:'Showing values together does not establish a relationship between them.'},
+        'taro-low':{title:'1994: taro yield low',year:1994,month:1,metric:'anomaly_mm',what:'The country-level taro-yield series reports 1,500 kg/ha, its lowest value in the displayed record.',scope:'Annual national/country taro-yield series. The 1993 disease history comes from FAO documentation.',question:'Which crop-diversity, breeding and farmer-evaluation options would keep recovery pathways open?',limit:'The yield line alone cannot identify causes or describe conditions on a particular farm.'},
+        'wet-month':{title:'April 2016: unusually wet month',year:2016,month:4,metric:'anomaly_mm',what:'The coarse modelled grid-cell estimate is 522 mm, 358 mm above its April record mean and the largest departure in this monthly record.',scope:'NASA POWER/MERRA-2 PRECTOTCORR at −13.83°, −171.75°; not a rain gauge.',question:'Would plans still function under a month this far above the within-model seasonal profile?',limit:'It cannot establish rainfall or impacts for a village, catchment, farm or household.'},
+        'dry-month':{title:'February 1998: unusually dry month',year:1998,month:2,metric:'anomaly_mm',what:'The coarse modelled grid-cell estimate is 36 mm, 211 mm below its February record mean and the largest negative departure in this monthly record.',scope:'NASA POWER/MERRA-2 PRECTOTCORR at −13.83°, −171.75°; not a Samoa-wide estimate.',question:'What fails if a normally wet-season month arrives this far below the within-model seasonal profile?',limit:'It does not report water availability, crop stress or household impacts.'},
+        'rain-reversal':{title:'2020 to 2022: wet-to-dry reversal',year:2020,month:1,metric:'anomaly_mm',what:'The official annual rainfall indicator moved from +27.3 mm in 2020 to −18.1 mm in 2021 and −20.7 mm in 2022.',scope:'Samoa-wide official annual indicator relative to its 1991 to 2020 baseline.',question:'Can a plan absorb opposite annual conditions in quick succession?',limit:'Annual national anomalies cannot declare a local drought or explain why the reversal occurred.'},
+        'latest':{title:'2024: latest shared annual record',year:2024,month:1,metric:'anomaly_mm',what:'The shared annual record reports an EEZ SST anomaly of +0.8°C and taro yield of 5,574.6 kg/ha. The indicators remain separate.',scope:'Samoa EEZ annual SST plus a national/country taro-yield series, with different units and baselines.',question:'Which current conditions belong in the next planning review?',limit:'Showing values together does not establish a relationship between them.'},
       };
       const yearControl=document.querySelector<HTMLInputElement>('#year-control')!;
       const monthControl=document.querySelector<HTMLSelectElement>('#month-control')!;
@@ -269,7 +292,7 @@ import '../styles/global.css';
         if(episode){setText('#episode-title',episode.title);setText('#episode-what',episode.what);setText('#episode-scope',episode.scope);setText('#episode-question',episode.question);setText('#episode-limit',episode.limit);}
         else {
           const year=Number(yearControl.value), month=Number(monthControl.value);
-          setText('#episode-title',`Custom selection — ${monthNames[month-1]} ${year}`);
+          setText('#episode-title',`Custom selection: ${monthNames[month-1]} ${year}`);
           setText('#episode-what','The controls below show the values available for this year and month, while keeping each dataset in its own evidence lane.');
           setText('#episode-scope','Samoa-wide and EEZ annual indicators, one modelled monthly grid point and a national/country crop series.');
           setText('#episode-question','What condition would this selection ask a plan to withstand?');
@@ -286,11 +309,11 @@ import '../styles/global.css';
         setText('#selected-rainfall',annualRainfall?`${signed(annualRainfall.anomaly,1)} mm`:'Not reported');
         setText('#selected-sst',annualSst?`${signed(annualSst.anomaly,2)} °C`:'Not reported');
         setText('#selected-taro',annualTaro?`${annualTaro.yieldKgHa.toLocaleString('en-AU',{maximumFractionDigits:1})} kg/ha`:'Not reported');
-        setText('#selected-monthly',selectedMonthly?`${selectedMonthly.total_mm.toFixed(0)} mm · ${signed(selectedMonthly.anomaly_mm,0)} mm`:'Not reported');
+        setText('#selected-monthly',selectedMonthly?`${signed(selectedMonthly.anomaly_mm,0)} mm`:'Not reported');
         const host=document.querySelector<HTMLElement>('#explorer-chart')!;host.dataset.metric=selectedMetric;
-        const label=selectedMetric==='total_mm'?'Monthly precipitation (mm)':'Departure from monthly normal (mm)';
-        host.replaceChildren(Plot.plot({width:chartWidth('explorer-chart'),height:isMobile?240:320,marginLeft:60,marginBottom:44,grid:true,x:{label:'Calendar month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:monthTick},y:{label},marks:[...(selectedMetric==='anomaly_mm'?[Plot.ruleY([0],{stroke:'#17333b'})]:[]),Plot.barY(monthlyRows,{x:'month',y:selectedMetric,fill:(row:Monthly)=>row.month===month?'#ba6d3c':selectedMetric==='anomaly_mm'?(row.anomaly_mm<0?'#c89a79':'#4b8ba2'):'#4b8ba2',opacity:(row:Monthly)=>row.month===month?1:.72,title:(row:Monthly)=>`${monthNames[row.month-1]} ${row.year}: ${row.total_mm.toFixed(0)} mm total; ${signed(row.anomaly_mm)} mm from normal`}),Plot.dot(monthlyRows.filter((row)=>row.month===month),{x:'month',y:selectedMetric,fill:'#17333b',stroke:'white',strokeWidth:2,r:6})]}));
-        const summary=selectedMonthly?`${monthNames[month-1]} ${year}: ${selectedMonthly.total_mm.toFixed(0)} mm at the near-Upolu grid point, ${signed(selectedMonthly.anomaly_mm)} mm from that month’s 1981–2025 normal.`:`${monthNames[month-1]} ${year}: monthly rainfall is not reported.`;
+        const label='Departure from calendar-month record mean (mm)';
+        host.replaceChildren(Plot.plot({width:chartWidth('explorer-chart'),height:isMobile?240:320,marginLeft:60,marginBottom:44,grid:true,x:{label:'Calendar month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:monthTick},y:{label},marks:[Plot.ruleY([0],{stroke:'#17333b'}),Plot.barY(monthlyRows,{x:'month',y:'anomaly_mm',fill:(row:Monthly)=>row.month===month?'#ba6d3c':row.anomaly_mm<0?'#c89a79':'#4b8ba2',opacity:(row:Monthly)=>row.month===month?1:.72,title:(row:Monthly)=>`${monthNames[row.month-1]} ${row.year}: ${signed(row.anomaly_mm)} mm from its calendar-month record mean`}),Plot.dot(monthlyRows.filter((row)=>row.month===month),{x:'month',y:'anomaly_mm',fill:'#17333b',stroke:'white',strokeWidth:2,r:6})]}));
+        const summary=selectedMonthly?`${monthNames[month-1]} ${year}: ${signed(selectedMonthly.anomaly_mm)} mm from that month’s 1981 to 2025 record mean in the coarse modelled grid-cell estimate.`:`${monthNames[month-1]} ${year}: monthly rainfall is not reported.`;
         setText('#explorer-status',summary);setText('#heatmap-selection',`${summary} Selection loaded into the stress test.`);
         renderEpisode();
         updateHeatmapSelection(year,month,false);
@@ -301,7 +324,7 @@ import '../styles/global.css';
       monthControl.addEventListener('change',()=>{selectedEpisode='';renderExplorer();});
       metricControls.forEach((control)=>control.addEventListener('change',()=>{selectedEpisode='';selectedMetric=control.value as Metric;renderExplorer();}));
 
-      const heatmapPlot=Plot.plot({width:chartWidth('rainfall-heatmap'),height:isMobile?450:720,marginLeft:52,marginBottom:46,x:{label:'Month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:monthTick},y:{label:'Year',ticks:isMobile?7:10,tickFormat:(year:number)=>String(year)},color:{type:'diverging',scheme:'BrBG',pivot:0,label:'Departure (mm)'},marks:[Plot.cell(seasonal.rainfall,{x:'month',y:'year',fill:'anomaly_mm',title:(row)=>`${row.year} ${months[row.month-1]}: ${signed(row.anomaly_mm)} mm from normal`}),Plot.frame()]});
+      const heatmapPlot=Plot.plot({width:chartWidth('rainfall-heatmap'),height:isMobile?450:720,marginLeft:52,marginBottom:46,x:{label:'Month',domain:[1,2,3,4,5,6,7,8,9,10,11,12],tickFormat:monthTick},y:{label:'Year',ticks:isMobile?7:10,tickFormat:(year:number)=>String(year)},color:{type:'diverging',scheme:'BrBG',pivot:0,label:'Departure (mm)'},marks:[Plot.cell(seasonal.rainfall,{x:'month',y:'year',fill:'anomaly_mm',title:(row)=>`${row.year} ${months[row.month-1]}: ${signed(row.anomaly_mm)} mm from the 1981–2025 calendar-month record mean`}),Plot.frame()]});
       heatmapPlot.setAttribute('role','grid');heatmapPlot.setAttribute('aria-label','Interactive year-by-month rainfall anomaly grid. Use arrow keys to move and Enter to select.');heatmapPlot.setAttribute('aria-describedby','heatmap-caption');mount('rainfall-heatmap',heatmapPlot);
       const cellMap=new Map<string,SVGRectElement>();
       Array.from(heatmapPlot.querySelectorAll<SVGRectElement>('rect')).forEach((cell)=>{const title=cell.querySelector('title')?.textContent??'';const match=title.match(/^(\d{4}) ([A-Z][a-z]{2}):/);if(!match)return;const year=Number(match[1]),month=months.indexOf(match[2])+1;cellMap.set(`${year}-${month}`,cell);cell.setAttribute('role','gridcell');cell.setAttribute('tabindex','-1');cell.setAttribute('aria-selected','false');cell.setAttribute('aria-label',`${title}. Press Enter to load ${monthNames[month-1]} ${year}.`);cell.addEventListener('click',()=>{selectedEpisode='';yearControl.value=String(year);monthControl.value=String(month);renderExplorer();updateHeatmapSelection(year,month,true);});cell.addEventListener('keydown',(event)=>{let targetYear=year,targetMonth=month;if(event.key==='ArrowLeft')targetMonth=Math.max(1,month-1);else if(event.key==='ArrowRight')targetMonth=Math.min(12,month+1);else if(event.key==='ArrowUp')targetYear=Math.max(1981,year-1);else if(event.key==='ArrowDown')targetYear=Math.min(2025,year+1);else if(event.key==='Home')targetMonth=1;else if(event.key==='End')targetMonth=12;else if(event.key==='Enter'||event.key===' '){event.preventDefault();selectedEpisode='';yearControl.value=String(year);monthControl.value=String(month);renderExplorer();return;}else return;event.preventDefault();updateHeatmapSelection(targetYear,targetMonth,true);});});

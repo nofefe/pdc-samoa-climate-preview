@@ -29,7 +29,7 @@ npm run render:pdf
 - `tests/`: Playwright smoke test and print artefact generation
 
 ## Data and interpretation
-See [`docs/evidence-manifest.md`](docs/evidence-manifest.md). The site shows annual national rainfall anomalies and Samoa-EEZ SST anomalies. They use different baselines and must not be interpreted as local observations or causal evidence.
+See [`docs/evidence-manifest.md`](docs/evidence-manifest.md) and [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md). The site shows annual national rainfall anomalies and Samoa-EEZ SST anomalies. They use different baselines and must not be interpreted as local observations or causal evidence.
 
 ## Framework documentation sources
 - Astro: https://docs.astro.build/en/install-and-setup/
